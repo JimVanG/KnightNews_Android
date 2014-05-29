@@ -1,64 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="4.0">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="4.0"
+              android:id="@+id/root">
 
-    <ImageView
-        android:id="@+id/home_imageButton_one"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:contentDescription="News"
-        android:scaleType="centerCrop" />
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/home_imageButton_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:contentDescription="News"
+            android:scaleType="centerCrop"/>
+
+
+        <TextView
+            android:id="@+id/newsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dp"
+            android:text="News"
+            android:textColor="#cccccc"
+            android:textSize="40dp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:weightSum="2.0">
+        android:weightSum="2.0"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp">
 
-        <ImageView
-            android:id="@+id/home_imageButton_two"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="Text A Tip"
-            android:src="@drawable/headerlogo" />
+            android:gravity="center"
+            android:layout_marginRight="1dp">
 
-        <ImageView
-            android:id="@+id/home_imageButton_three"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/home_imageButton_two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Text a tip"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/textText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:text="Text a Tip"
+                android:textColor="#cccccc"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="Events"
-            android:src="@drawable/headerlogo" />
+            android:gravity="center"
+            android:layout_marginRight="1dp">
+
+            <ImageView
+                android:id="@+id/home_imageButton_three"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Events"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/eventsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:text="Events"
+                android:textColor="#cccccc"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="2.0">
 
-        <ImageView
-            android:id="@+id/home_imageButton_four"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="Map"
-            android:src="@drawable/headerlogo" />
+            android:gravity="center">
 
-        <ImageView
-            android:id="@+id/home_imageButton_five"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/home_imageButton_four"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Map"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/mapText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:text="Map"
+                android:textColor="#cccccc"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="Athletics"
-            android:src="@drawable/headerlogo" />
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/home_imageButton_five"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Athletics"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/sportsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:text="Athletics"
+                android:textColor="#cccccc"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

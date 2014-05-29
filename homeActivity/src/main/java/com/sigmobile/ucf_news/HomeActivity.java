@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -35,6 +37,15 @@ public class HomeActivity extends Activity {
     private ArrayList<String> mListOfImageUrls;
     private JsonObjectRequest mRequest;
 
+    //drawable resources for populating the "Athletics" imageView
+    private final int[] mAthleticsDrawables = {R.drawable.footballucftoday_png,
+            R.drawable.baseball_field_png,
+            R.drawable.stadium1_png};
+    //drawable resources for populating the "events" imageView
+    private final int[] mEventsDrawables = {R.drawable.events_knitro,
+            R.drawable.events_beach,
+            R.drawable.events_splash};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +56,8 @@ public class HomeActivity extends Activity {
 
         fetchNewsItems();
         RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
+
+        LinearLayout root = (LinearLayout)findViewById(R.id.root);
 
         mImageButtonNews = (ImageView) findViewById(R.id.home_imageButton_one);
         mImageButtonNews.setOnClickListener(new OnClickListener() {
@@ -57,6 +70,7 @@ public class HomeActivity extends Activity {
                 startActivity(i);
             }
         });
+        //TextView textNews = (TextView)findViewById(R.id.newsText);
 
         mImageButtonText = (ImageView) findViewById(R.id.home_imageButton_two);
         mImageButtonText.setOnClickListener(new OnClickListener() {
@@ -121,23 +135,39 @@ public class HomeActivity extends Activity {
         RequestManager.getInstance(this).cancelRequestByTag(TAG);
     }
 
-    private void setUpUi(int imagePosition) {
+    private void setUpUi(int imagePosition, int athleticsPosition, int eventsPosistion) {
         if (mListOfImageUrls != null) {
             Picasso.with(this).load(mListOfImageUrls.get(imagePosition))
                     .into(mImageButtonNews);
+        }
+        if (mAthleticsDrawables != null) {
+            mImageButtonSports.setImageResource(mAthleticsDrawables[athleticsPosition]);
+        }
+        if (mEventsDrawables != null) {
+            mImageButtonEvents.setImageResource(mEventsDrawables[eventsPosistion]);
         }
     }
 
     private void swapPictureAfterInterval() {
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
-            int i = 0;
+            int i = 0
+                    ,
+                    j = 0, k = 0;
 
             public void run() {
-                setUpUi(i);
+                setUpUi(i, j, k);
                 i++;
+                j++;
+                k++;
                 if (i >= mListOfImageUrls.size()) {
                     i = 0;
+                }
+                if (j >= mAthleticsDrawables.length) {
+                    j = 0;
+                }
+                if (k >= mEventsDrawables.length) {
+                    k = 0;
                 }
                 handler.postDelayed(this, 5000);  //for interval...
             }

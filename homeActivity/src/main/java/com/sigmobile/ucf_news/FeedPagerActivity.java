@@ -2,6 +2,7 @@ package com.sigmobile.ucf_news;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,8 @@ public class FeedPagerActivity extends ActionBarActivity {
     private static final String TAG = "FeedPagerActivity";
 
     public static final String EXTRA_POSITION = "com.sigmobile.ucf_news.FeedPagerActivity.EXTRA_POSITION";
+    private static final String STATE_POSITION = "com.sigmobile.ucf_news.STATE_POSITION";
+
 
     private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
     private static final String TAG_POSTS = "posts";
@@ -40,8 +43,6 @@ public class FeedPagerActivity extends ActionBarActivity {
     private static final String TAG_IMAGE = "image";
     private static final String TAG_AUTHOR = "author";
     private static final String TAG_NAME = "name";
-
-    private static final String STATE_POSITION = "com.sigmobile.ucf_news.STATE_POSITION";
 
     private static final float MIN_DISTANCE = 120;
     private float x1 = 0, x2 = 0;
