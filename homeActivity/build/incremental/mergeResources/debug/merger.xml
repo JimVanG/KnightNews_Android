@@ -17326,6 +17326,9 @@ false
                     -->
                 </style>
 
+                <color name="Black" >#000000
+                </color>
+
                 <style
                     name="AppTheme"
                     parent="AppBaseTheme" >
@@ -17374,6 +17377,16 @@ false
             <file
                 name="events_knitro"
                 path="/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/src/main/res/drawable-hdpi/events_knitro.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="tip"
+                path="/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/src/main/res/drawable-hdpi/tip.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="map"
+                path="/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/src/main/res/drawable-hdpi/map.png"
                 qualifiers="hdpi"
                 type="drawable" />
         </source>

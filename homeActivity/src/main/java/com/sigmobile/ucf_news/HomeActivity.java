@@ -57,8 +57,6 @@ public class HomeActivity extends Activity {
         fetchNewsItems();
         RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
 
-        LinearLayout root = (LinearLayout)findViewById(R.id.root);
-
         mImageButtonNews = (ImageView) findViewById(R.id.home_imageButton_one);
         mImageButtonNews.setOnClickListener(new OnClickListener() {
 

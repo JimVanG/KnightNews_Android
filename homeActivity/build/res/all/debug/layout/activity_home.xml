@@ -4,12 +4,14 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:weightSum="4.0"
-              android:id="@+id/root">
+              android:id="@+id/root"
+              android:background="@color/Black">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
+        android:layout_margin="4dp"
         android:gravity="center"
         >
 
@@ -33,7 +35,7 @@
             android:layout_marginLeft="5dp"
             android:text="News"
             android:textColor="#cccccc"
-            android:textSize="40dp"
+            android:textSize="50dp"
             android:textStyle="bold"/>
     </RelativeLayout>
 
@@ -43,112 +45,16 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="2.0"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp">
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="4dp"
+        >
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginRight="1dp">
-
-            <ImageView
-                android:id="@+id/home_imageButton_two"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:contentDescription="Text a tip"
-                android:scaleType="centerCrop"/>
-
-            <TextView
-                android:id="@+id/textText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
-                android:text="Text a Tip"
-                android:textColor="#cccccc"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginRight="1dp">
-
-            <ImageView
-                android:id="@+id/home_imageButton_three"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:contentDescription="Events"
-                android:scaleType="centerCrop"
-                />
-
-            <TextView
-                android:id="@+id/eventsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
-                android:text="Events"
-                android:textColor="#cccccc"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="2.0">
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/home_imageButton_four"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:contentDescription="Map"
-                android:scaleType="centerCrop"
-                />
-
-            <TextView
-                android:id="@+id/mapText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
-                android:text="Map"
-                android:textColor="#cccccc"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_marginRight="4dp"
             android:gravity="center">
 
             <ImageView
@@ -170,9 +76,115 @@
                 android:layout_marginLeft="5dp"
                 android:text="Athletics"
                 android:textColor="#cccccc"
-                android:textSize="25dp"
+                android:textSize="30dp"
                 android:textStyle="bold"/>
         </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/home_imageButton_three"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Events"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/eventsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:text="Events"
+                android:textColor="#cccccc"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:weightSum="2.0">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/home_imageButton_four"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Map"
+                android:scaleType="centerCrop"
+                android:src="@drawable/map"
+                />
+
+            <TextView
+                android:id="@+id/mapText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:text="Map"
+                android:textColor="#cccccc"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/home_imageButton_two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Text a tip"
+                android:src="@drawable/tip"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/textText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:text="Text a Tip"
+                android:textColor="#cccccc"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
     </LinearLayout>
 
 </LinearLayout><!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/src/main/res/layout/activity_home.xml -->
