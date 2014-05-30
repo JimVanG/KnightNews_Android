@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:layout_margin="4dp"
+        android:layout_margin="6dp"
         android:gravity="center"
         >
 
@@ -25,6 +25,20 @@
             android:contentDescription="News"
             android:scaleType="centerCrop"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@color/Yellow"
+            android:textSize="30dp"
+            android:text="News"
+            android:textColor="@android:color/transparent"
+            android:alpha=".7"/>
+
 
         <TextView
             android:id="@+id/newsText"
@@ -32,11 +46,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="0dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:text="News"
-            android:textColor="#cccccc"
-            android:textSize="50dp"
-            android:textStyle="bold"/>
+            android:textSize="30dp"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -45,16 +64,16 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="2.0"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginRight="6dp"
         >
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginRight="4dp"
+            android:layout_marginRight="6dp"
             android:gravity="center">
 
             <ImageView
@@ -73,11 +92,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="Athletics"
                 android:textColor="#cccccc"
                 android:textSize="30dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:background="@color/Yellow"
+                android:alpha=".6"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -104,11 +127,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="Events"
                 android:textColor="#cccccc"
                 android:textSize="30dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:background="@color/Yellow"
+                android:alpha=".6"/>
         </RelativeLayout>
     </LinearLayout>
 
@@ -117,16 +144,16 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
         android:weightSum="2.0">
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginRight="4dp"
+            android:layout_marginRight="6dp"
             android:gravity="center">
 
             <ImageView
@@ -147,11 +174,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="Map"
                 android:textColor="#cccccc"
                 android:textSize="30dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:background="@color/Yellow"
+                android:alpha=".6"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -178,11 +209,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="Text a Tip"
                 android:textColor="#cccccc"
                 android:textSize="30dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:background="@color/Yellow"
+                android:alpha=".6"/>
         </RelativeLayout>
 
     </LinearLayout>

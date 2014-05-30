@@ -78,6 +78,7 @@
     <eat-comment />
 
     <color name="Black">#000000</color>
+    <color name="Yellow">#FFFF32</color>
     <!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment />
 

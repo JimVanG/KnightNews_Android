@@ -122,12 +122,6 @@ public class HomeActivity extends Activity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
         RequestManager.getInstance(this).cancelRequestByTag(TAG);
