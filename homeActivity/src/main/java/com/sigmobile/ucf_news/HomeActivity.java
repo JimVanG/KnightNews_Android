@@ -35,6 +35,13 @@ public class HomeActivity extends Activity {
 
 
     private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
+    private static final String STATE_NEWS_POSITION = "com.sigmobile.ucf_news.HomeActivity.STATE_NEWS_POSITION";
+    private static final String STATE_NEWS_URL_LIST = "com.sigmobile.ucf_news.HomeActivity" +
+            ".STATE_NEWS_URL_LIST";
+    private static final String STATE_ATHLETICS_POSITION = "com.sigmobile.ucf_news" +
+            ".HomeActivity.STATE_ATHLETICS_POSITION";
+    private static final String STATE_EVENTS_POSITION = "com.sigmobile.ucf_news" +
+            ".HomeActivity.STATE_EVENTS_POSITION";
 
     private ImageView mImageButtonText, mImageButtonMap,
             mImageButtonEvents, mImageButtonSports;
@@ -42,6 +49,9 @@ public class HomeActivity extends Activity {
     private ArrayList<String> mListOfImageUrls;
     private JsonObjectRequest mRequest;
     private Context mContext;
+    private int i = 0,
+            j = 0,
+            k = 0;
 
     //drawable resources for populating the "Athletics" imageView
     private final int[] mAthleticsDrawables = {R.drawable.footballucftoday_png,
@@ -60,8 +70,17 @@ public class HomeActivity extends Activity {
         mContext = this;
         mListOfImageUrls = new ArrayList<String>();
 
-        fetchNewsItems();
-        RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
+        if (savedInstanceState != null) {
+            mListOfImageUrls = savedInstanceState.getStringArrayList(STATE_NEWS_URL_LIST);
+            i = savedInstanceState.getInt(STATE_NEWS_POSITION, 0);
+            j = savedInstanceState.getInt(STATE_ATHLETICS_POSITION, 0);
+            k = savedInstanceState.getInt(STATE_EVENTS_POSITION, 0);
+            swapPictureAfterInterval();
+
+        } else {
+            fetchNewsItems();
+            RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
+        }
 
         mImageButtonNews = (ImageView) findViewById(R.id.home_imageButton_one);
         mImageButtonNews.setOnClickListener(new OnClickListener() {
@@ -146,6 +165,16 @@ public class HomeActivity extends Activity {
         RequestManager.getInstance(this).cancelRequestByTag(TAG);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putStringArrayList(STATE_NEWS_URL_LIST, mListOfImageUrls);
+        outState.putInt(STATE_NEWS_POSITION, i);
+        outState.putInt(STATE_ATHLETICS_POSITION, j);
+        outState.putInt(STATE_EVENTS_POSITION, k);
+
+    }
+
     private void setUpUi(int imagePosition, int athleticsPosition, int eventsPosistion) {
         if (mListOfImageUrls != null) {
             Picasso.with(this).load(mListOfImageUrls.get(imagePosition))
@@ -162,17 +191,8 @@ public class HomeActivity extends Activity {
     private void swapPictureAfterInterval() {
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
-            int i = 0
-                    ,
-                    j = 0
-                    ,
-                    k = 0;
 
             public void run() {
-                setUpUi(i, j, k);
-                i++;
-                j++;
-                k++;
                 if (i >= mListOfImageUrls.size()) {
                     i = 0;
                 }
@@ -182,6 +202,7 @@ public class HomeActivity extends Activity {
                 if (k >= mEventsDrawables.length) {
                     k = 0;
                 }
+                setUpUi(i++, j++, k++);
                 handler.postDelayed(this, 5000);  //for interval...
             }
         };
