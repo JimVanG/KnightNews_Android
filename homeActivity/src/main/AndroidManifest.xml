@@ -28,7 +28,7 @@
         android:allowBackup="true"
         android:icon="@drawable/appicon"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        android:theme="@style/CustomActionBarTheme">
         <activity
             android:name="com.sigmobile.ucf_news.HomeActivity"
             android:label="@string/app_name">

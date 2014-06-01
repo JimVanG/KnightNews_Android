@@ -18,7 +18,13 @@
     </style>
 
 
+
+
     <color name="Black">#000000</color>
     <color name="Yellow">#FFFF32</color>
+    <color name="Yellow_Alpha_at_7">#B3FFFF32</color>
+    <color name="Old_Gold_Alpha_at_8">#CCCFB53B</color>
+    <color name="Old_Gold">#CFB53B</color>
+
 
 </resources>

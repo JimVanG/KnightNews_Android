@@ -78,7 +78,10 @@
     <eat-comment />
 
     <color name="Black">#000000</color>
+    <color name="Old_Gold">#CFB53B</color>
+    <color name="Old_Gold_Alpha_at_8">#CCCFB53B</color>
     <color name="Yellow">#FFFF32</color>
+    <color name="Yellow_Alpha_at_7">#B3FFFF32</color>
     <!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment />
 
@@ -776,6 +779,47 @@
 
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/src/main/res/values/themes.xml -->
+    <eat-comment />
+
+    <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+        <item name="android:actionMenuTextColor">@color/Old_Gold</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarTabStyle">@style/MyActionBarTabs</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarTabTextStyle">@style/MyActionBarTabText</item>
+        <item name="actionMenuTextColor">@color/Old_Gold</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+
+        <!-- Support library compatibility -->
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <style name="MyActionBarTabText" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/Old_Gold</item>
+        <!-- The textColor property is backward compatible with the Support Library -->
+    </style>
+
+    <style name="MyActionBarTabs" parent="@style/Widget.AppCompat.ActionBar.TabView">
+
+        <!-- tab indicator -->
+        <item name="android:background">@drawable/actionbar_tab_indicator</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/actionbar_tab_indicator</item>
+    </style>
+
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/Old_Gold</item>
+        <!-- The textColor property is backward compatible with the Support Library -->
     </style>
     <!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment />
