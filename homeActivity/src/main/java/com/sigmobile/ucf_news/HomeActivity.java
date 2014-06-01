@@ -2,6 +2,8 @@ package com.sigmobile.ucf_news;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -24,6 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends Activity {
     private static final String TAG = "HomeActivity";
@@ -80,7 +84,18 @@ public class HomeActivity extends Activity {
                 Intent returnIt = new Intent(Intent.ACTION_SENDTO, smsToUri);
                 returnIt.putExtra("sms_body", "Tip for KnightNews: ");
                 returnIt.putExtra("exit_on_sent", true);
-                startActivity(returnIt);
+
+                PackageManager manager = getApplicationContext().getPackageManager();
+                List<ResolveInfo> activities = manager.queryIntentActivities(
+                        returnIt, 0);
+                if (activities != null && activities.size() > 0) {
+                    startActivity(returnIt);
+                } else {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "Sorry, there were no apps that worked with that request.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -119,6 +134,8 @@ public class HomeActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        swapLocalPicturesAfterInterval();
     }
 
     @Override
@@ -127,40 +144,57 @@ public class HomeActivity extends Activity {
         RequestManager.getInstance(this).cancelRequestByTag(TAG);
     }
 
-    private void setUpUi(int imagePosition, int athleticsPosition, int eventsPosistion) {
+    private void setUpUi(int imagePosition) {
         if (mListOfImageUrls != null) {
             Picasso.with(this).load(mListOfImageUrls.get(imagePosition))
                     .into(mImageButtonNews);
         }
+    }
+
+    private void setUpLocalUi(int sportsPics, int eventsPics) {
         if (mAthleticsDrawables != null) {
-            mImageButtonSports.setImageResource(mAthleticsDrawables[athleticsPosition]);
+            mImageButtonSports.setImageResource(mAthleticsDrawables[sportsPics]);
         }
         if (mEventsDrawables != null) {
-            mImageButtonEvents.setImageResource(mEventsDrawables[eventsPosistion]);
+            mImageButtonEvents.setImageResource(mEventsDrawables[eventsPics]);
         }
+    }
+
+    private void swapLocalPicturesAfterInterval() {
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            int i = 0
+                    ,
+                    j = 0;
+
+            public void run() {
+                setUpLocalUi(i, j);
+                i++;
+                j++;
+                if (i >= mAthleticsDrawables.length) {
+                    i = 0;
+                }
+                if (j >= mEventsDrawables.length) {
+                    j = 0;
+                }
+                handler.postDelayed(this, 5000);  //for interval...
+            }
+        };
+        handler.postDelayed(runnable, 0); //for initial delay..
     }
 
     private void swapPictureAfterInterval() {
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
-            int i = 0
-                    ,
-                    j = 0, k = 0;
+            int i = 0;
 
             public void run() {
-                setUpUi(i, j, k);
+                setUpUi(i);
                 i++;
-                j++;
-                k++;
                 if (i >= mListOfImageUrls.size()) {
                     i = 0;
                 }
-                if (j >= mAthleticsDrawables.length) {
-                    j = 0;
-                }
-                if (k >= mEventsDrawables.length) {
-                    k = 0;
-                }
+
                 handler.postDelayed(this, 5000);  //for interval...
             }
         };
