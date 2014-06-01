@@ -61,7 +61,7 @@ public class ReaderFragment extends Fragment {
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_SUBJECT, mStory.getTitle());
             intent.putExtra(Intent.EXTRA_TEXT, mStory.getDescription() + "\n"
-                    + mStory.getUrl() + "\n\n" + "Sent via KnightNews");
+                    + mStory.getUrl() + "\n\n\n" + "Via KnightNews for Android");
 
             mShareActionProvider.setShareIntent(intent);
         }
