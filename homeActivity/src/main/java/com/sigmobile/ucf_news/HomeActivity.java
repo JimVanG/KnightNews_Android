@@ -1,6 +1,7 @@
 package com.sigmobile.ucf_news;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -40,6 +41,7 @@ public class HomeActivity extends Activity {
     private ImageView mImageButtonNews;
     private ArrayList<String> mListOfImageUrls;
     private JsonObjectRequest mRequest;
+    private Context mContext;
 
     //drawable resources for populating the "Athletics" imageView
     private final int[] mAthleticsDrawables = {R.drawable.footballucftoday_png,
@@ -55,7 +57,7 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        mContext = this;
         mListOfImageUrls = new ArrayList<String>();
 
         fetchNewsItems();
@@ -67,7 +69,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //News
-                Intent i = new Intent(getApplicationContext(),
+                Intent i = new Intent(mContext,
                         FeedPagerActivity.class);
                 startActivity(i);
             }
@@ -85,14 +87,14 @@ public class HomeActivity extends Activity {
                 returnIt.putExtra("sms_body", "Tip for KnightNews: ");
                 returnIt.putExtra("exit_on_sent", true);
 
-                PackageManager manager = getApplicationContext().getPackageManager();
+                PackageManager manager = getPackageManager();
                 List<ResolveInfo> activities = manager.queryIntentActivities(
                         returnIt, 0);
                 if (activities != null && activities.size() > 0) {
                     startActivity(returnIt);
                 } else {
                     Toast.makeText(
-                            getApplicationContext(),
+                            mContext,
                             "Sorry, there were no apps that worked with that request.",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -106,7 +108,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //Events
-                Intent i = new Intent(getApplicationContext(),
+                Intent i = new Intent(mContext,
                         EventsActivity.class);
                 startActivity(i);
             }
@@ -118,7 +120,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //Map
-                Intent i = new Intent(getApplicationContext(),
+                Intent i = new Intent(mContext,
                         UcfMapActivity.class);
                 startActivity(i);
             }
@@ -131,7 +133,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //Sports WebView
-                Intent i = new Intent(getApplicationContext(),
+                Intent i = new Intent(mContext,
                         SportsActivity.class);
                 startActivity(i);
             }

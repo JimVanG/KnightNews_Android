@@ -1,5 +1,6 @@
 package com.sigmobile.ucf_news;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -39,11 +40,13 @@ public class EventsActivity extends ActionBarActivity {
     private ArrayList<EventItem> mItems;
     private StringRequest mRequest;
     private ListView mList;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_list);
+        mContext = this;
 
         mItems = new ArrayList<EventItem>();
         fetchEventItems();
@@ -71,14 +74,14 @@ public class EventsActivity extends ActionBarActivity {
                                              intent = Intent.createChooser(intent,
                                                      "Share event:");
 
-                                             PackageManager manager = getApplicationContext().getPackageManager();
+                                             PackageManager manager = getPackageManager();
                                              List<ResolveInfo> activities = manager.queryIntentActivities(
                                                      intent, 0);
                                              if (activities != null && activities.size() > 0) {
                                                  startActivity(intent);
                                              } else {
                                                  Toast.makeText(
-                                                         getApplicationContext(),
+                                                         mContext,
                                                          "Sorry, there were no apps that worked with that request.",
                                                          Toast.LENGTH_SHORT).show();
                                              }
@@ -193,7 +196,7 @@ public class EventsActivity extends ActionBarActivity {
     private class EventsAdapter extends ArrayAdapter<EventItem> {
 
         public EventsAdapter(ArrayList<EventItem> stories) {
-            super(getApplicationContext(), android.R.layout.simple_list_item_1,
+            super(mContext, android.R.layout.simple_list_item_1,
                     stories);
         }
 
