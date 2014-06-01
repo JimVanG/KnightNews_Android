@@ -2,11 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
-    <item
         android:id="@+id/action_share"
         android:title="@string/share"
         app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
