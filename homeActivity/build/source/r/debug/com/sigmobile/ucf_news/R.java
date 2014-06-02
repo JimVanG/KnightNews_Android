@@ -1319,14 +1319,17 @@ containing a value of this type.
         public static final int ic_plusone_small_off_client=0x7f02007c;
         public static final int ic_plusone_standard_off_client=0x7f02007d;
         public static final int ic_plusone_tall_off_client=0x7f02007e;
-        public static final int map=0x7f02007f;
-        public static final int powered_by_google_dark=0x7f020080;
-        public static final int powered_by_google_light=0x7f020081;
-        public static final int splashlogo=0x7f020082;
-        public static final int stadium1_png=0x7f020083;
-        public static final int swipe=0x7f020084;
-        public static final int tab_bar_background_selected=0x7f020085;
-        public static final int tip=0x7f020086;
+        public static final int knswipe=0x7f02007f;
+        public static final int kntap=0x7f020080;
+        public static final int map=0x7f020081;
+        public static final int powered_by_google_dark=0x7f020082;
+        public static final int powered_by_google_light=0x7f020083;
+        public static final int splashlogo=0x7f020084;
+        public static final int stadium1_png=0x7f020085;
+        public static final int swipe=0x7f020086;
+        public static final int tab_bar_background_selected=0x7f020087;
+        public static final int tip=0x7f020088;
+        public static final int tip96=0x7f020089;
     }
     public static final class id {
         public static final int abridged_imageView_author=0x7f07005e;
@@ -1472,13 +1475,14 @@ containing a value of this type.
         public static final int activity_events_list=0x7f030018;
         public static final int activity_fragment=0x7f030019;
         public static final int activity_home=0x7f03001a;
-        public static final int fragment_abridged=0x7f03001b;
-        public static final int fragment_feed=0x7f03001c;
-        public static final int fragment_reader=0x7f03001d;
-        public static final int fragment_sports=0x7f03001e;
-        public static final int list_item_cell_story=0x7f03001f;
-        public static final int list_item_event=0x7f030020;
-        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+        public static final int dialogue_first_time=0x7f03001b;
+        public static final int fragment_abridged=0x7f03001c;
+        public static final int fragment_feed=0x7f03001d;
+        public static final int fragment_reader=0x7f03001e;
+        public static final int fragment_sports=0x7f03001f;
+        public static final int list_item_cell_story=0x7f030020;
+        public static final int list_item_event=0x7f030021;
+        public static final int support_simple_spinner_dropdown_item=0x7f030022;
     }
     public static final class menu {
         public static final int feed=0x7f0c0000;

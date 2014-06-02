@@ -1,8 +1,12 @@
 package com.sigmobile.ucf_news;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,6 +34,8 @@ public class FeedPagerActivity extends ActionBarActivity {
 
     public static final String EXTRA_POSITION = "com.sigmobile.ucf_news.FeedPagerActivity.EXTRA_POSITION";
     private static final String STATE_POSITION = "com.sigmobile.ucf_news.STATE_POSITION";
+
+    private static final String PREFS_NAME = "KnightNewsPrefsFile";
 
 
     private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
@@ -124,6 +130,7 @@ public class FeedPagerActivity extends ActionBarActivity {
             mPager.setPageTransformer(true, new DepthPageTransformer());
 
         setContentView(mPager);
+        checkFirstTime();
     }
 
     @Override
@@ -176,6 +183,33 @@ public class FeedPagerActivity extends ActionBarActivity {
             }
         }
         );
+    }
+
+    private void checkFirstTime() {
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        if (settings.getBoolean("my_first_time", true)) {
+            //the app is being launched for first time, do something
+            Log.d("Comments", "First time");
+
+//            // first time task
+//            FirstTimeDialog dia = FirstTimeDialog.newInstance();
+//            dia.show(getSupportFragmentManager(), "FirstTimeDialog");
+
+            new AlertDialog.Builder(this).setTitle("SWIPE").setIcon(R.drawable.kntap)
+                    .setPositiveButton
+                    (android.R
+                    .string.ok, new OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            }).create().show();
+
+
+            // record the fact that the app has been started at least once
+            settings.edit().putBoolean("my_first_time", false).commit();
+        }
     }
 
     private void parseJSON(JSONObject response) {
@@ -276,4 +310,5 @@ public class FeedPagerActivity extends ActionBarActivity {
             }
         }
     }
+
 }

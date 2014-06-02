@@ -243,7 +243,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentRight="true"
                     android:contentDescription="Text a tip"
-                    android:src="@drawable/tip"
+                    android:src="@drawable/tip96"
                     android:scaleType="centerCrop"/>
 
                 <TextView
