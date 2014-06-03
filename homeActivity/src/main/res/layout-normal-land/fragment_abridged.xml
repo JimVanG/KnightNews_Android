@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
-            android:textSize="35sp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
-            android:textSize="17sp"
+            android:textSize="13dp"
             android:textStyle="italic" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
-            android:textSize="20sp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
 </LinearLayout>

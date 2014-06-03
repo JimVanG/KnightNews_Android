@@ -128,6 +128,8 @@ public class FeedPagerActivity extends ActionBarActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
             mPager.setPageTransformer(true, new DepthPageTransformer());
+        else
+            mPager.setPageMargin(10);
 
         setContentView(mPager);
         checkFirstTime();
