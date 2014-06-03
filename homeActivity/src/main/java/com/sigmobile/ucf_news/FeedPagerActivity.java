@@ -192,19 +192,9 @@ public class FeedPagerActivity extends ActionBarActivity {
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
 
-//            // first time task
-//            FirstTimeDialog dia = FirstTimeDialog.newInstance();
-//            dia.show(getSupportFragmentManager(), "FirstTimeDialog");
-
-            new AlertDialog.Builder(this).setTitle("SWIPE").setIcon(R.drawable.kntap)
-                    .setPositiveButton
-                    (android.R
-                    .string.ok, new OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-
-                }
-            }).create().show();
+            // first time task
+            FirstTimeDialog dia = FirstTimeDialog.newInstance();
+            dia.show(getSupportFragmentManager(), "FirstTimeDialog");
 
 
             // record the fact that the app has been started at least once

@@ -3,12 +3,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@color/Black_Alpha_at_85">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/Old_Gold"
+        android:text="To Read More..."/>
 
     <ImageView
+        android:id="@+id/helperImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/kntap"/>
+
+    <Button
+        android:id="@+id/only_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_first_time_selector"
+        android:textColor="@color/Old_Gold"
+        android:textStyle="bold"
+        android:text="Next"
+        />
 
 </LinearLayout>
