@@ -177,7 +177,7 @@ public class HomeActivity extends Activity {
 
     private void setUpUi(int imagePosition, int athleticsPosition, int eventsPosistion) {
         if (mListOfImageUrls != null) {
-            Picasso.with(this).load(mListOfImageUrls.get(imagePosition))
+            Picasso.with(this).load(mListOfImageUrls.get(imagePosition)).fit()
                     .into(mImageButtonNews);
         }
         if (mAthleticsDrawables != null) {
