@@ -1130,7 +1130,7 @@ containing a value of this type.
     }
     public static final class color {
         public static final int Black=0x7f060000;
-        public static final int Black_Alpha_at_85=0x7f060001;
+        public static final int Black_Alpha_at_75=0x7f060001;
         public static final int Old_Gold=0x7f060002;
         public static final int Old_Gold_Alpha_at_8=0x7f060003;
         public static final int Yellow=0x7f060004;

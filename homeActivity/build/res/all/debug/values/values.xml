@@ -78,7 +78,7 @@
     <eat-comment />
 
     <color name="Black">#000000</color>
-    <color name="Black_Alpha_at_85">#D9000000</color>
+    <color name="Black_Alpha_at_75">#BF000000</color>
     <color name="Old_Gold">#CFB53B</color>
     <color name="Old_Gold_Alpha_at_8">#CCCFB53B</color>
     <color name="Yellow">#FFFF32</color>

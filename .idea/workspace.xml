@@ -116,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dialogue_first_time.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dialogue_first_time.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout/dialogue_first_time.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5243902" vertical-offset="10" max-vertical-offset="855">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="855">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -129,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dialogue_first_time.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dialogue_first_time.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/dialogue_first_time.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4444447" vertical-offset="0" max-vertical-offset="855">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="49" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.80487806" vertical-offset="0" max-vertical-offset="855">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -1315,7 +1315,6 @@
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-large-land/activity_home.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-small-land/activity_home.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/com/sigmobile/ucf_news/MyAlertDialogueFragment.java" />
-        <option value="$PROJECT_DIR$/homeActivity/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/com/sigmobile/ucf_news/FirstTimeDialog.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/button_first_time_selector.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/button_first_time.xml" />
@@ -1325,9 +1324,10 @@
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/fragment_abridged.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-normal/fragment_abridged.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/activity_home.xml" />
-        <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/dialogue_first_time.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/com/sigmobile/ucf_news/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout/dialogue_first_time.xml" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/dialogue_first_time.xml" />
       </list>
     </option>
   </component>
@@ -1555,6 +1555,36 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homeActivity" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1579,7 +1609,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.56.103:5555" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.56.101:5555" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="242" />
     <property name="OverrideImplement.combined" value="true" />
@@ -2157,14 +2187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="555">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/com/sigmobile/ucf_news/FirstTimeDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="388" max-vertical-offset="900">
@@ -2254,10 +2276,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/dialogue_first_time.xml">
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4444447" vertical-offset="0" max-vertical-offset="855">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="49" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="555">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout/dialogue_first_time.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="855">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -2265,10 +2295,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout/dialogue_first_time.xml">
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/dialogue_first_time.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5243902" vertical-offset="10" max-vertical-offset="855">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.80487806" vertical-offset="0" max-vertical-offset="855">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
           <folding />
         </state>
       </provider>

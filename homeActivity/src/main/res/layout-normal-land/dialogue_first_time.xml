@@ -10,7 +10,7 @@
         android:layout_width="230dp"
         android:layout_height="200dp"
         android:orientation="vertical"
-        android:background="@color/Black_Alpha_at_85"
+        android:background="@color/Black_Alpha_at_75"
         android:layout_gravity="center"
         >
 
