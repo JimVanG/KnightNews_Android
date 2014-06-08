@@ -74,10 +74,12 @@
     <bool name="abc_config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
     <bool name="abc_split_action_bar_is_narrow">true</bool>
-    <!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/homeActivity/src/main/res/values/colors.xml -->
     <eat-comment />
 
     <color name="Black">#000000</color>
+    <color name="Black_Alpha_at_65">#A6000000</color>
+    <color name="Black_Alpha_at_70">#B3000000</color>
     <color name="Black_Alpha_at_75">#BF000000</color>
     <color name="Old_Gold">#CFB53B</color>
     <color name="Old_Gold_Alpha_at_8">#CCCFB53B</color>
