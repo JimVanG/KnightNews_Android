@@ -1328,14 +1328,15 @@ containing a value of this type.
         public static final int knswipe=0x7f020082;
         public static final int kntap=0x7f020083;
         public static final int map=0x7f020084;
-        public static final int powered_by_google_dark=0x7f020085;
-        public static final int powered_by_google_light=0x7f020086;
-        public static final int splashlogo=0x7f020087;
-        public static final int stadium1_png=0x7f020088;
-        public static final int swipe=0x7f020089;
-        public static final int tab_bar_background_selected=0x7f02008a;
-        public static final int tip=0x7f02008b;
-        public static final int tip96=0x7f02008c;
+        public static final int news_error=0x7f020085;
+        public static final int powered_by_google_dark=0x7f020086;
+        public static final int powered_by_google_light=0x7f020087;
+        public static final int splashlogo=0x7f020088;
+        public static final int stadium1_png=0x7f020089;
+        public static final int swipe=0x7f02008a;
+        public static final int tab_bar_background_selected=0x7f02008b;
+        public static final int tip=0x7f02008c;
+        public static final int tip96=0x7f02008d;
     }
     public static final class id {
         public static final int abridged_imageView_author=0x7f070061;

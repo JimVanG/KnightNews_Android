@@ -96,6 +96,7 @@ public class HomeActivity extends Activity {
         //TextView textNews = (TextView)findViewById(R.id.newsText);
 
         mImageButtonText = (ImageView) findViewById(R.id.home_imageButton_two);
+        //Picasso.with(this).load(R.drawable.tip96).fit().into(mImageButtonText);
         mImageButtonText.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -134,6 +135,7 @@ public class HomeActivity extends Activity {
         });
 
         mImageButtonMap = (ImageView) findViewById(R.id.home_imageButton_four);
+        Picasso.with(this).load(R.drawable.map).fit().into(mImageButtonMap);
         mImageButtonMap.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -178,6 +180,8 @@ public class HomeActivity extends Activity {
     private void setUpUi(int imagePosition, int athleticsPosition, int eventsPosistion) {
         if (mListOfImageUrls != null) {
             Picasso.with(this).load(mListOfImageUrls.get(imagePosition)).fit()
+                    .error(R.drawable
+                    .news_error)
                     .into(mImageButtonNews);
         }
         if (mAthleticsDrawables != null) {
