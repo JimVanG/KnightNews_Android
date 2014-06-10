@@ -92,15 +92,10 @@ public class EventsActivity extends ActionBarActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
         RequestManager.getInstance(this).cancelRequestByTag(TAG);
+        mContext = null;
     }
 
     @Override

@@ -25,7 +25,7 @@ public class UcfMapFragment extends SupportMapFragment {
 
         mGoogleMap = getMap();
 
-//16
+        //16 (other good zoom)
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(UCF_LAT_LNG, 15));
 
         // Zoom in, animating the camera. 15

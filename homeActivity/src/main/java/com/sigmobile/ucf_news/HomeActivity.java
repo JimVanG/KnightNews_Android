@@ -163,6 +163,7 @@ public class HomeActivity extends Activity {
     public void onDestroy() {
         super.onDestroy();
         RequestManager.getInstance(this).cancelRequestByTag(TAG);
+        mContext = null;
     }
 
     @Override
@@ -205,7 +206,7 @@ public class HomeActivity extends Activity {
                     k = 0;
                 }
                 setUpUi(i++, j++, k++);
-                handler.postDelayed(this, 5000);  //for interval...
+                handler.postDelayed(this, 4500);  //for interval...
             }
         };
         handler.postDelayed(runnable, 0); //for initial delay..
