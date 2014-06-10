@@ -38,7 +38,6 @@ public class EventsActivity extends ActionBarActivity {
     private static final String URL_EVENTS = "http://knightnews.com/events.xml";
 
     private ArrayList<EventItem> mItems;
-    private StringRequest mRequest;
     private ListView mList;
     private Context mContext;
 
@@ -50,7 +49,6 @@ public class EventsActivity extends ActionBarActivity {
 
         mItems = new ArrayList<EventItem>();
         fetchEventItems();
-        RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -126,7 +124,7 @@ public class EventsActivity extends ActionBarActivity {
     }
 
     private void fetchEventItems() {
-        mRequest = new StringRequest(URL_EVENTS,
+        StringRequest mRequest = new StringRequest(URL_EVENTS,
                 new Response.Listener<String>() {
 
                     @Override
@@ -156,6 +154,7 @@ public class EventsActivity extends ActionBarActivity {
             }
         }
         );
+        RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
     }
 
     private void parseItems(XmlPullParser parser)

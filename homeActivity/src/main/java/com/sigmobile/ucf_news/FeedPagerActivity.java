@@ -54,7 +54,6 @@ public class FeedPagerActivity extends ActionBarActivity {
     private float x1 = 0, x2 = 0;
 
     private ViewPager mPager;
-    private JsonObjectRequest mRequest;
 
     @TargetApi(11)
     @Override
@@ -62,7 +61,7 @@ public class FeedPagerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         fetchNewsItems();
-        RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
+
 
         mPager = new ViewPager(this);
         mPager.setId(R.id.viewPager);
@@ -163,7 +162,7 @@ public class FeedPagerActivity extends ActionBarActivity {
     }
 
     private void fetchNewsItems() {
-        mRequest = new JsonObjectRequest(URL_JSON, null,
+        JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -185,6 +184,7 @@ public class FeedPagerActivity extends ActionBarActivity {
             }
         }
         );
+        RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
     }
 
     private void checkFirstTime() {

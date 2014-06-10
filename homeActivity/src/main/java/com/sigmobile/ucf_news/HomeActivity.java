@@ -47,7 +47,6 @@ public class HomeActivity extends Activity {
             mImageButtonEvents, mImageButtonSports;
     private ImageView mImageButtonNews;
     private ArrayList<String> mListOfImageUrls;
-    private JsonObjectRequest mRequest;
     private Context mContext;
     private int i = 0,
             j = 0,
@@ -79,7 +78,6 @@ public class HomeActivity extends Activity {
 
         } else {
             fetchNewsItems();
-            RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
         }
 
         mImageButtonNews = (ImageView) findViewById(R.id.home_imageButton_one);
@@ -214,7 +212,7 @@ public class HomeActivity extends Activity {
     }
 
     private void fetchNewsItems() {
-        mRequest = new JsonObjectRequest(URL_JSON, null,
+       JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -236,6 +234,7 @@ public class HomeActivity extends Activity {
             }
         }
         );
+        RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
     }
 
     private void parseJSON(JSONObject response) {
