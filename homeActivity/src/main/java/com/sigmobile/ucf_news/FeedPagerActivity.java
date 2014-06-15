@@ -94,7 +94,10 @@ public class FeedPagerActivity extends ActionBarActivity {
                             if (StoryListManager
                                     .getInstance(getApplicationContext())
                                     .getStoryList().get(mPager.getCurrentItem())
-                                    .getContentNoVideo().contains("vimeo")) {
+                                    .getContentNoVideo().contains("vimeo") || StoryListManager
+                                    .getInstance(getApplicationContext())
+                                    .getStoryList().get(mPager.getCurrentItem())
+                                    .getContentNoVideo().contains("www.youtube.com/")) {
 
                                 Intent i = new Intent(getApplicationContext(),
                                         ReaderWebViewActivity.class);

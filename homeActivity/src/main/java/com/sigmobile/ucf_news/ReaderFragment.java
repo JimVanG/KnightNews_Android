@@ -1,6 +1,7 @@
 package com.sigmobile.ucf_news;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
+
+import com.google.android.gms.internal.ca;
 
 public class ReaderFragment extends Fragment {
     private static final String TAG = "ReaderFragment";
@@ -68,6 +71,20 @@ public class ReaderFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case (R.id.open_in_browser):
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mStory.getUrl()));
+                startActivity(browserIntent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater,
