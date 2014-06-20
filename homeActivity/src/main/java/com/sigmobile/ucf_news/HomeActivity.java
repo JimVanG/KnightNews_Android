@@ -30,6 +30,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import timber.log.Timber;
+
 public class HomeActivity extends Activity {
     private static final String TAG = "HomeActivity";
 
@@ -65,6 +67,9 @@ public class HomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_home);
         mContext = this;
         mListOfImageUrls = new ArrayList<String>();
@@ -86,6 +91,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //News
+
                 Intent i = new Intent(mContext,
                         FeedPagerActivity.class);
                 startActivity(i);

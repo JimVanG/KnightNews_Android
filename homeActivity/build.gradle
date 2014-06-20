@@ -23,5 +23,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.android.gms:play-services:4.4.52'
     compile files('libs/picasso-2.2.0.jar')
+    compile 'com.jakewharton.timber:timber:2.4.+'
 
 }

@@ -31,6 +31,7 @@ public class UcfMapFragment extends SupportMapFragment {
         // Zoom in, animating the camera. 15
         mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(15.5f), 2000, null);
 
+        mGoogleMap.setMyLocationEnabled(true);
 
         return v;
     }
