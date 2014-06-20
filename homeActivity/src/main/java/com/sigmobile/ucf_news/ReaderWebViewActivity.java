@@ -112,4 +112,17 @@ public class ReaderWebViewActivity extends Activity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        MenuItem openInBrowser = menu.findItem(R.id.open_in_browser);
+        openInBrowser.setVisible(false);
+
+        MenuItem share = menu.findItem(R.id.action_share);
+        share.setVisible(false);
+
+        return super.onPrepareOptionsMenu(menu);
+    }
 }

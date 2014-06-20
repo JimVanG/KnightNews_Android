@@ -194,13 +194,9 @@ public class FeedPagerActivity extends ActionBarActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
         if (settings.getBoolean("my_first_time", true)) {
-            //the app is being launched for first time, do something
-            Log.d("Comments", "First time");
 
-            // first time task
             FirstTimeDialog dia = FirstTimeDialog.newInstance();
             dia.show(getSupportFragmentManager(), "FirstTimeDialog");
-
 
             // record the fact that the app has been started at least once
             settings.edit().putBoolean("my_first_time", false).commit();
