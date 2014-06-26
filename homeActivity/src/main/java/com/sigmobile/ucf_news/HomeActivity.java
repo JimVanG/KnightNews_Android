@@ -30,7 +30,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import timber.log.Timber;
 
 public class HomeActivity extends Activity {
     private static final String TAG = "HomeActivity";

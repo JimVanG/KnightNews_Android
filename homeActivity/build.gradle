@@ -15,6 +15,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    // This is important, it will run lint checks but won't abort build
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -23,6 +28,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.android.gms:play-services:4.4.52'
     compile files('libs/picasso-2.2.0.jar')
-    compile 'com.jakewharton.timber:timber:2.4.+'
+
 
 }
