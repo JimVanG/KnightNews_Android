@@ -13,69 +13,74 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class AbridgedStoryFragment extends Fragment {
-	private static final String TAG = "AbridgedStoryActivity";
+    private static final String TAG = "AbridgedStoryActivity";
 
-	private static final String KEY_STORYITEM = "com.sigmobile.ucf_news.KEY_STORYITEM";
+    private static final String KEY_STORYITEM = "com.sigmobile.ucf_news.KEY_STORYITEM";
 
-	private ImageView mImageViewThumb;
-	private TextView mTextViewHeadline, mTextViewAuthor, mTextViewDesc;
-	private StoryItem mItem;
+    private ImageView mImageViewThumb;
+    private TextView mTextViewHeadline, mTextViewAuthor, mTextViewDesc;
+    private StoryItem mItem;
 
-	public AbridgedStoryFragment() {
-	};
+    public AbridgedStoryFragment() {
+    }
 
-	public static AbridgedStoryFragment newInstance(StoryItem abridgedStory) {
-		AbridgedStoryFragment f = new AbridgedStoryFragment();
-		Bundle bun = new Bundle();
-		bun.putSerializable(KEY_STORYITEM, abridgedStory);
-		f.setArguments(bun);
-		return f;
-	}
+    ;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    public static AbridgedStoryFragment newInstance(StoryItem abridgedStory) {
+        AbridgedStoryFragment f = new AbridgedStoryFragment();
+        Bundle bun = new Bundle();
+        bun.putSerializable(KEY_STORYITEM, abridgedStory);
+        f.setArguments(bun);
+        return f;
+    }
 
-		if (getArguments() != null) {
-			mItem = (StoryItem) getArguments().getSerializable(KEY_STORYITEM);
-		}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-	}
+        if (getArguments() != null) {
+            mItem = (StoryItem) getArguments().getSerializable(KEY_STORYITEM);
+        }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			NavUtils.navigateUpFromSameTask(getActivity());
-			return true;
+    }
 
-		}
-		return super.onOptionsItemSelected(item);
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(getActivity());
+                return true;
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.fragment_abridged, container, false);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-		mImageViewThumb = (ImageView) v
-				.findViewById(R.id.abridged_imageView_thumbnail);
-		Picasso.with(getActivity()).load(mItem.getPictureUrl()).fit().noFade()
-				.into(mImageViewThumb);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_abridged, container, false);
 
-		mTextViewHeadline = (TextView) v
-				.findViewById(R.id.abridged_imageView_headline);
-		mTextViewHeadline.setText(mItem.getTitle());
+        mImageViewThumb = (ImageView) v
+                .findViewById(R.id.abridged_imageView_thumbnail);
+        Picasso.with(getActivity()).load(mItem.getPictureUrl()).fit()
+                .noFade()
+                .error(R.drawable
+                        .news_error)
+                .into(mImageViewThumb);
 
-		mTextViewAuthor = (TextView) v
-				.findViewById(R.id.abridged_imageView_author);
-		mTextViewAuthor.setText(mItem.getAuthor());
+        mTextViewHeadline = (TextView) v
+                .findViewById(R.id.abridged_imageView_headline);
+        mTextViewHeadline.setText(mItem.getTitle());
 
-		mTextViewDesc = (TextView) v
-				.findViewById(R.id.abridged_imageView_description);
-		mTextViewDesc.setText(mItem.getDescription());
+        mTextViewAuthor = (TextView) v
+                .findViewById(R.id.abridged_imageView_author);
+        mTextViewAuthor.setText(mItem.getAuthor());
 
-		return v;
-	}
+        mTextViewDesc = (TextView) v
+                .findViewById(R.id.abridged_imageView_description);
+        mTextViewDesc.setText(mItem.getDescription());
+
+        return v;
+    }
 
 }

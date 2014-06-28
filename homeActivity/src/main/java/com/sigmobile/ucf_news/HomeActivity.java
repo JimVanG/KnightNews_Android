@@ -259,6 +259,8 @@ public class HomeActivity extends Activity {
                 StoryItem item = new StoryItem();
                 item.setPictureUrl(img);
                 mListOfImageUrls.add(item.getPictureUrl());
+
+                Log.d(TAG, "ImageURLS: " + item.getPictureUrl());
             }
         } catch (JSONException e) {
             e.printStackTrace();
