@@ -1,4 +1,4 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;

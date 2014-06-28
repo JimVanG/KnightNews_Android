@@ -1,4 +1,4 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
 
 public class EventItem {
 

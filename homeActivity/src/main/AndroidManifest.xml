@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sigmobile.ucf_news"
+          package="knightnews.android"
           android:versionCode="10"
           android:versionName="2.0.0">
 
@@ -29,7 +29,7 @@
         android:label="@string/app_name"
         android:theme="@style/CustomActionBarTheme">
         <activity
-            android:name="com.sigmobile.ucf_news.HomeActivity"
+            android:name="knightnews.android.HomeActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -38,42 +38,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.sigmobile.ucf_news.ReaderActivity"
+            android:name="knightnews.android.ReaderActivity"
             android:label="@string/app_name"
-            android:parentActivityName="com.sigmobile.ucf_news.FeedPagerActivity">
+            android:parentActivityName="knightnews.android.FeedPagerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sigmobile.ucf_news.FeedPagerActivity"/>
         </activity>
         <activity
-            android:name="com.sigmobile.ucf_news.FeedPagerActivity"
+            android:name="knightnews.android.FeedPagerActivity"
             android:label="@string/app_name"
-            android:parentActivityName="com.sigmobile.ucf_news.HomeActivity">
+            android:parentActivityName="knightnews.android.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sigmobile.ucf_news.HomeActivity"/>
         </activity>
         <activity
-            android:name="com.sigmobile.ucf_news.EventsActivity"
+            android:name="knightnews.android.EventsActivity"
             android:label="@string/app_name"
-            android:parentActivityName="com.sigmobile.ucf_news.HomeActivity">
+            android:parentActivityName="knightnews.android.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sigmobile.ucf_news.HomeActivity"/>
         </activity>
         <activity
-            android:name="com.sigmobile.ucf_news.SportsActivity"
+            android:name="knightnews.android.SportsActivity"
             android:label="@string/app_name"
-            android:parentActivityName="com.sigmobile.ucf_news.HomeActivity"
+            android:parentActivityName="knightnews.android.HomeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sigmobile.ucf_news.HomeActivity"/>
         </activity>
         <activity
-            android:name="com.sigmobile.ucf_news.UcfMapActivity"
+            android:name="knightnews.android.UcfMapActivity"
             android:label="@string/app_name"
-            android:parentActivityName="com.sigmobile.ucf_news.HomeActivity"
+            android:parentActivityName="knightnews.android.HomeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -82,14 +82,14 @@
         <activity
             android:name=".ReaderWebViewActivity"
             android:label="@string/app_name"
-            android:parentActivityName="com.sigmobile.ucf_news.FeedPagerActivity"
+            android:parentActivityName="knightnews.android.FeedPagerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sigmobile.ucf_news.FeedPagerActivity"/>
         </activity>
         <activity
-            android:name="com.sigmobile.ucf_news.FeedActivity"
+            android:name="knightnews.android.FeedActivity"
             android:label="@string/app_name"></activity>
 
         <meta-data

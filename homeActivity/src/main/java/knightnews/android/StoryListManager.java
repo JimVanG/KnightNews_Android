@@ -1,8 +1,8 @@
-package com.sigmobile.ucf_news;
-
-import java.util.ArrayList;
+package knightnews.android;
 
 import android.content.Context;
+
+import java.util.ArrayList;
 
 public class StoryListManager {
 

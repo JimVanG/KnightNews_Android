@@ -1,4 +1,4 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
 
 import android.content.Context;
 import android.content.Intent;

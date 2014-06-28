@@ -1,4 +1,4 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,11 +14,11 @@ import android.widget.TextView;
 /**
  * Created by jjvg on 5/26/14.
  */
-public class SportsFragment3 extends Fragment {
+public class SportsFragment extends Fragment {
     private static final String TAG = "SportsFragment";
 
     private static final String URL =
-            "";
+            "http://espn.go.com/college-football/team/_/id/2116/ucf-knights";
 
     private WebView mWebView;
 

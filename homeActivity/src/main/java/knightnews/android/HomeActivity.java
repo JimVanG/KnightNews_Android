@@ -1,4 +1,4 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,10 +11,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -66,8 +63,6 @@ public class HomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
         setContentView(R.layout.activity_home);
         mContext = this;
@@ -260,7 +255,7 @@ public class HomeActivity extends Activity {
                 item.setPictureUrl(img);
                 mListOfImageUrls.add(item.getPictureUrl());
 
-                Log.d(TAG, "ImageURLS: " + item.getPictureUrl());
+                //Log.d(TAG, "ImageURLS: " + item.getPictureUrl());
             }
         } catch (JSONException e) {
             e.printStackTrace();

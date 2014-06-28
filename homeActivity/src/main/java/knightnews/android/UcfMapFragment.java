@@ -1,4 +1,4 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

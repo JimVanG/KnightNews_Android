@@ -1,13 +1,13 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
+
+import android.graphics.drawable.Drawable;
+import android.text.Html;
+import android.text.Html.ImageGetter;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import android.graphics.drawable.Drawable;
-import android.text.Html;
-import android.text.Html.ImageGetter;
 
 public class StoryItem implements Serializable {
 
@@ -148,7 +148,7 @@ public class StoryItem implements Serializable {
 	}
 
 	private String parseHTML(String contents) {
-		return android.text.Html.fromHtml(contents, new ImageGetter() {
+		return Html.fromHtml(contents, new ImageGetter() {
 
 			@Override
 			public Drawable getDrawable(String source) {

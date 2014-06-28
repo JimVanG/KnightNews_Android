@@ -1,10 +1,4 @@
-package com.sigmobile.ucf_news;
-
-import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+package knightnews.android;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -28,6 +22,12 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class FeedFragment extends ListFragment {
 	private static final String TAG = "FeedFragment";

@@ -1,10 +1,6 @@
-package com.sigmobile.ucf_news;
+package knightnews.android;
 
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
