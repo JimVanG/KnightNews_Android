@@ -12,13 +12,19 @@ android {
     }
 
     signingConfigs{
-
+        release {
+            storeFile file("knight_news_keystore.keystore")
+            storePassword "ucfnews09"
+            keyAlias "knightnews"
+            keyPassword "ucfnews09"
+        }
     }
 
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
         }
     }
 

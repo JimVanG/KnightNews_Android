@@ -33,7 +33,8 @@ public class HomeActivity extends Activity {
 
 
     private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
-    private static final String STATE_NEWS_POSITION = "com.sigmobile.ucf_news.HomeActivity.STATE_NEWS_POSITION";
+    private static final String STATE_NEWS_POSITION = "com.sigmobile.ucf_news.HomeActivity" +
+            ".STATE_NEWS_POSITION";
     private static final String STATE_NEWS_URL_LIST = "com.sigmobile.ucf_news.HomeActivity" +
             ".STATE_NEWS_URL_LIST";
     private static final String STATE_ATHLETICS_POSITION = "com.sigmobile.ucf_news" +
@@ -108,7 +109,12 @@ public class HomeActivity extends Activity {
                 PackageManager manager = getPackageManager();
                 List<ResolveInfo> activities = manager.queryIntentActivities(
                         returnIt, 0);
-                if (activities != null && activities.size() > 0) {
+                if (!manager.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                    Toast.makeText(
+                            mContext,
+                            "Sorry, there were no apps that worked with that request.",
+                            Toast.LENGTH_SHORT).show();
+                } else if (activities != null && activities.size() > 0) {
                     startActivity(returnIt);
                 } else {
                     Toast.makeText(
@@ -180,7 +186,7 @@ public class HomeActivity extends Activity {
         if (mListOfImageUrls != null) {
             Picasso.with(this).load(mListOfImageUrls.get(imagePosition)).fit()
                     .error(R.drawable
-                    .news_error)
+                            .news_error)
                     .into(mImageButtonNews);
         }
         if (mAthleticsDrawables != null) {
@@ -213,7 +219,7 @@ public class HomeActivity extends Activity {
     }
 
     private void fetchNewsItems() {
-       JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
+        JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
