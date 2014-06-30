@@ -8,7 +8,6 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.squareup.picasso.Picasso;
 
@@ -222,22 +220,17 @@ public class HomeActivity extends Activity {
         JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
                 new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            VolleyLog.v("Response:%n %s", response.toString(4));
-                            Log.i(TAG, "Response: " + response.toString());
+                    public void onResponse(JSONObject response) {//
+                        // VolleyLog.v("Response:%n %s", response.toString(4));
+//                            Log.i(TAG, "Response: " + response.toString());
 
-                            parseJSON(response);
-                            swapPictureAfterInterval();
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        parseJSON(response);
+                        swapPictureAfterInterval();
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.e("Error: ", error.getMessage());
+                //VolleyLog.e("Error: ", error.getMessage());
             }
         }
         );

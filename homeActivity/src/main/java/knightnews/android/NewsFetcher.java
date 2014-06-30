@@ -83,7 +83,7 @@ public class NewsFetcher {
 			// connect to the url
 			String xmlString = getUrl();
 
-			Log.i(TAG, "Received xml: " + xmlString);
+//			Log.i(TAG, "Received xml: " + xmlString);
 
 			// make a xml parser, must create an instance of the
 			// XMLPullParserFactory first.

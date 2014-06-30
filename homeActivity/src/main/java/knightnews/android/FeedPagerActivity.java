@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
@@ -18,7 +17,6 @@ import android.view.View.OnTouchListener;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONArray;
@@ -28,7 +26,8 @@ import org.json.JSONObject;
 public class FeedPagerActivity extends ActionBarActivity {
     private static final String TAG = "FeedPagerActivity";
 
-    public static final String EXTRA_POSITION = "com.sigmobile.ucf_news.FeedPagerActivity.EXTRA_POSITION";
+    public static final String EXTRA_POSITION = "com.sigmobile.ucf_news.FeedPagerActivity" +
+            ".EXTRA_POSITION";
     private static final String STATE_POSITION = "com.sigmobile.ucf_news.STATE_POSITION";
 
     private static final String PREFS_NAME = "KnightNewsPrefsFile";
@@ -165,21 +164,18 @@ public class FeedPagerActivity extends ActionBarActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        try {
-                            VolleyLog.v("Response:%n %s", response.toString(4));
-                            Log.i(TAG, "Response: " + response.toString());
+//                            VolleyLog.v("Response:%n %s", response.toString(4));
+//                            Log.i(TAG, "Response: " + response.toString());
 
-                            parseJSON(response);
-                            setUpAdapter();
+                        parseJSON(response);
+                        setUpAdapter();
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.e("Error: ", error.getMessage());
+                //VolleyLog.e("Error: ", error.getMessage());
             }
         }
         );

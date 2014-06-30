@@ -7,7 +7,6 @@ import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,6 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -73,14 +71,16 @@ public class EventsActivity extends ActionBarActivity {
                                                      "Share event:");
 
                                              PackageManager manager = getPackageManager();
-                                             List<ResolveInfo> activities = manager.queryIntentActivities(
-                                                     intent, 0);
+                                             List<ResolveInfo> activities = manager
+                                                     .queryIntentActivities(
+                                                             intent, 0);
                                              if (activities != null && activities.size() > 0) {
                                                  startActivity(intent);
                                              } else {
                                                  Toast.makeText(
                                                          mContext,
-                                                         "Sorry, there were no apps that worked with that request.",
+                                                         "Sorry, there were no apps that worked " +
+                                                                 "with that request.",
                                                          Toast.LENGTH_SHORT).show();
                                              }
 
@@ -124,7 +124,7 @@ public class EventsActivity extends ActionBarActivity {
 
                     @Override
                     public void onResponse(String response) {
-                        Log.i(TAG, response);
+                        //Log.i(TAG, response);
                         XmlPullParserFactory factory;
                         try {
                             factory = XmlPullParserFactory.newInstance();
@@ -145,7 +145,7 @@ public class EventsActivity extends ActionBarActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.e("Error: ", error.getMessage());
+                //VolleyLog.e("Error: ", error.getMessage());
             }
         }
         );

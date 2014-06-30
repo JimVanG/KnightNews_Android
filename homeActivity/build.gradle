@@ -11,7 +11,7 @@ android {
         versionName "2.1.0"
     }
 
-    signingConfigs{
+    signingConfigs {
         release {
             storeFile file("knight_news_keystore.keystore")
             storePassword "ucfnews09"
