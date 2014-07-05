@@ -1,5 +1,6 @@
 package knightnews.android;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class ReaderWebViewActivity extends Activity {
     private ShareActionProvider mShareActionProvider;
     private StoryItem mStory;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,10 @@ public class ReaderWebViewActivity extends Activity {
 
         mWebView = (WebView) findViewById(R.id.webView);
         mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setLoadWithOverviewMode(true);
+        mWebView.getSettings().setUseWideViewPort(true);
+        mWebView.getSettings().setBuiltInZoomControls(true);
+        mWebView.getSettings().setDisplayZoomControls(false);
 
 
         mWebView.setWebViewClient(new WebViewClient() {

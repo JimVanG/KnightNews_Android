@@ -1,5 +1,6 @@
 package knightnews.android;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,7 +13,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class ReaderFragment extends Fragment {
@@ -43,7 +47,7 @@ public class ReaderFragment extends Fragment {
         Bundle args = getArguments();
         if (args != null) {
             mStory = (StoryItem) args.getSerializable(KEY_STORY);
-           // Log.d(TAG, "***Contents: " + mStory.getUnparsedContent());
+            // Log.d(TAG, "***Contents: " + mStory.getUnparsedContent());
         }
         setHasOptionsMenu(true);
     }
@@ -85,6 +89,7 @@ public class ReaderFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
@@ -101,6 +106,14 @@ public class ReaderFragment extends Fragment {
 
         mContentWebView = (WebView) v
                 .findViewById(R.id.fragment_reader_story_content);
+
+        mContentWebView.setWebChromeClient(new WebChromeClient());
+        mContentWebView.getSettings().setPluginState(WebSettings.PluginState.ON);
+        mContentWebView.getSettings().setPluginState(WebSettings.PluginState.ON_DEMAND);
+        mContentWebView.setWebViewClient(new WebViewClient());
+        mContentWebView.getSettings().setJavaScriptEnabled(true);
+        //mContentWebView.getSettings().setLoadWithOverviewMode(true);
+
 
         mContentWebView.loadData(mStory.getUnparsedContent(),
                 "text/html; charset=utf-8", "UTF-8");
