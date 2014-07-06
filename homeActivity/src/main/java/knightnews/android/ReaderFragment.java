@@ -43,6 +43,8 @@ public class ReaderFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+       // setRetainInstance(true);
+
         // get the fragments arguments
         Bundle args = getArguments();
         if (args != null) {
@@ -117,7 +119,7 @@ public class ReaderFragment extends Fragment {
 
         //veryVeryVery important for playing the videos!
         mContentWebView.loadDataWithBaseURL(mStory.getUrl(), mStory.getUnparsedContent(),
-                "text/html; charset=utf-8", "UTF-8", null);
+                "text/html", "UTF-8", null);
 
         return v;
     }
