@@ -86,27 +86,6 @@ public class FeedPagerActivity extends ActionBarActivity {
                             // Log.d(TAG, "*TAP*");
                             v.playSoundEffect(SoundEffectConstants.CLICK);
 
-                            if (StoryListManager
-                                    .getInstance(getApplicationContext())
-                                    .getStoryList().get(mPager.getCurrentItem())
-                                    .getContentNoVideo().contains("vimeo") || StoryListManager
-                                    .getInstance(getApplicationContext())
-                                    .getStoryList().get(mPager.getCurrentItem())
-                                    .getContentNoVideo().contains("www.youtube.com/")) {
-
-                                Intent i = new Intent(getApplicationContext(),
-                                        ReaderWebViewActivity.class);
-                                i.putExtra(ReaderWebViewActivity.KEY_URL, StoryListManager
-                                        .getInstance(getApplicationContext())
-                                        .getStoryList().get(mPager.getCurrentItem()).getUrl());
-                                i.putExtra(ReaderWebViewActivity.KEY_STORY, StoryListManager
-                                        .getInstance(getApplicationContext())
-                                        .getStoryList().get(mPager.getCurrentItem()));
-                                i.putExtra(EXTRA_POSITION, mPager.getCurrentItem());
-
-                                startActivity(i);
-                            } else {
-
                                 Intent i = new Intent(getApplicationContext(),
                                         ReaderActivity.class);
                                 i.putExtra(ReaderFragment.KEY_STORY, StoryListManager
@@ -116,7 +95,7 @@ public class FeedPagerActivity extends ActionBarActivity {
 
                                 startActivity(i);
                             }
-                        }
+                        //}
                         break;
                 }
                 return false;

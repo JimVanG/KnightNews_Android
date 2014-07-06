@@ -115,8 +115,11 @@ public class ReaderFragment extends Fragment {
         //mContentWebView.getSettings().setLoadWithOverviewMode(true);
 
 
-        mContentWebView.loadData(mStory.getUnparsedContent(),
-                "text/html; charset=utf-8", "UTF-8");
+//        mContentWebView.loadData(mStory.getUnparsedContent(),
+//                "text/html; charset=utf-8", "UTF-8");
+
+        mContentWebView.loadDataWithBaseURL(mStory.getUrl(), mStory.getUnparsedContent(),
+                "text/html; charset=utf-8", "UTF-8", null);
 
         return v;
     }

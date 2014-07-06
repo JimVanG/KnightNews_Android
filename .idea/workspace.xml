@@ -29,8 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b6dae84-31c0-4d37-a911-f5cf516b98c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderWebViewActivity.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderWebViewActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/build.gradle" afterPath="$PROJECT_DIR$/homeActivity/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderFragment.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HomeActivity.iws" />
@@ -106,8 +106,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="765">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReaderFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ReaderFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6504065" vertical-offset="195" max-vertical-offset="1695">
-              <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1740">
+              <caret line="112" column="62" selection-start-line="112" selection-start-column="62" selection-end-line="112" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -159,20 +159,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeedPagerActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FeedPagerActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="4230">
-              <caret line="125" column="67" selection-start-line="125" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.22765599" vertical-offset="840" max-vertical-offset="3915">
+              <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
               <folding>
-                <element signature="e#2448#5222#0" expanded="true" />
-                <element signature="e#5211#5212#0" expanded="true" />
-                <element signature="e#6282#6704#0" expanded="true" />
-                <element signature="e#6685#6686#0" expanded="true" />
-                <element signature="e#6706#6905#0" expanded="true" />
-                <element signature="e#6894#6895#0" expanded="true" />
-                <element signature="e#8928#8929#0" expanded="true" />
-                <element signature="e#8961#8962#0" expanded="true" />
+                <element signature="e#2448#3834#0" expanded="true" />
+                <element signature="e#3823#3824#0" expanded="true" />
+                <element signature="e#4894#5316#0" expanded="true" />
+                <element signature="e#5297#5298#0" expanded="true" />
+                <element signature="e#5318#5517#0" expanded="true" />
+                <element signature="e#5506#5507#0" expanded="true" />
+                <element signature="e#7540#7541#0" expanded="true" />
+                <element signature="e#7573#7574#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -209,6 +209,24 @@
         <entry key=":homeActivity/HomeActivity/" value="true" />
         <entry key="HomeActivity/" value="true" />
       </map>
+    </option>
+    <option name="recentTasks">
+      <list>
+        <ExternalTaskExecutionInfo>
+          <option name="executorId" value="Run" />
+          <option name="settings">
+            <ExternalSystemSettings>
+              <option name="externalProjectPath" value="$PROJECT_DIR$/homeActivity" />
+              <option name="externalSystemIdString" value="GRADLE" />
+              <option name="taskNames">
+                <list>
+                  <option value="assembleRelease" />
+                </list>
+              </option>
+            </ExternalSystemSettings>
+          </option>
+        </ExternalTaskExecutionInfo>
+      </list>
     </option>
     <option name="availableProjects">
       <map>
@@ -1426,12 +1444,12 @@
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedFragment.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/RequestManager.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout/fragment_reader.xml" />
-        <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderFragment.java" />
         <option value="$PROJECT_DIR$/homeActivity/build.gradle" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderWebViewActivity.java" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderFragment.java" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
       </list>
     </option>
   </component>
@@ -1962,16 +1980,16 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1987076" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2431562" sideWeight="0.4628433" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20516963" sideWeight="0.50209206" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18820679" sideWeight="0.50199205" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25925925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36070853" sideWeight="0.5371567" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36070853" sideWeight="0.5371567" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18820679" sideWeight="0.49790794" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18820679" sideWeight="0.49601594" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19162641" sideWeight="0.51857835" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10662359" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="122" width="1080" height="531" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2401,43 +2419,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/android.jar!/android/os/Build.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.41463414" vertical-offset="597" max-vertical-offset="1200">
+          <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="4230">
-          <caret line="125" column="67" selection-start-line="125" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding>
-            <element signature="e#2448#5222#0" expanded="true" />
-            <element signature="e#5211#5212#0" expanded="true" />
-            <element signature="e#6282#6704#0" expanded="true" />
-            <element signature="e#6685#6686#0" expanded="true" />
-            <element signature="e#6706#6905#0" expanded="true" />
-            <element signature="e#6894#6895#0" expanded="true" />
-            <element signature="e#8928#8929#0" expanded="true" />
-            <element signature="e#8961#8962#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/android.jar!/android/os/Build.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41463414" vertical-offset="597" max-vertical-offset="1200">
-          <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="765">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2455,9 +2448,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6504065" vertical-offset="195" max-vertical-offset="1695">
-          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1740">
+          <caret line="112" column="62" selection-start-line="112" selection-start-column="62" selection-end-line="112" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22765599" vertical-offset="840" max-vertical-offset="3915">
+          <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
+          <folding>
+            <element signature="e#2448#3834#0" expanded="true" />
+            <element signature="e#3823#3824#0" expanded="true" />
+            <element signature="e#4894#5316#0" expanded="true" />
+            <element signature="e#5297#5298#0" expanded="true" />
+            <element signature="e#5318#5517#0" expanded="true" />
+            <element signature="e#5506#5507#0" expanded="true" />
+            <element signature="e#7540#7541#0" expanded="true" />
+            <element signature="e#7573#7574#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
