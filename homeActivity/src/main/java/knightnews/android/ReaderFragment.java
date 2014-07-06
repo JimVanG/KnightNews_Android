@@ -107,6 +107,7 @@ public class ReaderFragment extends Fragment {
         mContentWebView = (WebView) v
                 .findViewById(R.id.fragment_reader_story_content);
 
+        //very important for playing the videos
         mContentWebView.setWebChromeClient(new WebChromeClient());
         mContentWebView.getSettings().setPluginState(WebSettings.PluginState.ON);
         mContentWebView.getSettings().setPluginState(WebSettings.PluginState.ON_DEMAND);
@@ -114,10 +115,7 @@ public class ReaderFragment extends Fragment {
         mContentWebView.getSettings().setJavaScriptEnabled(true);
         //mContentWebView.getSettings().setLoadWithOverviewMode(true);
 
-
-//        mContentWebView.loadData(mStory.getUnparsedContent(),
-//                "text/html; charset=utf-8", "UTF-8");
-
+        //veryVeryVery important for playing the videos!
         mContentWebView.loadDataWithBaseURL(mStory.getUrl(), mStory.getUnparsedContent(),
                 "text/html; charset=utf-8", "UTF-8", null);
 
