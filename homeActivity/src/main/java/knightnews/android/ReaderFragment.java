@@ -1,6 +1,7 @@
 package knightnews.android;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ public class ReaderFragment extends Fragment {
     private WebView mContentWebView;
     private StoryItem mStory;
     private ShareActionProvider mShareActionProvider;
+    private Context mContext;
+    private String initialWebViewUrl;
 
     public ReaderFragment() {
     }
@@ -44,6 +47,8 @@ public class ReaderFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
        // setRetainInstance(true);
+        mContext = getActivity();
+
 
         // get the fragments arguments
         Bundle args = getArguments();
@@ -52,6 +57,12 @@ public class ReaderFragment extends Fragment {
             // Log.d(TAG, "***Contents: " + mStory.getUnparsedContent());
         }
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mContext = null;
     }
 
     @Override
@@ -110,10 +121,10 @@ public class ReaderFragment extends Fragment {
                 .findViewById(R.id.fragment_reader_story_content);
 
         //very important for playing the videos
+        mContentWebView.setWebViewClient(webClient);
         mContentWebView.setWebChromeClient(new WebChromeClient());
         mContentWebView.getSettings().setPluginState(WebSettings.PluginState.ON);
         mContentWebView.getSettings().setPluginState(WebSettings.PluginState.ON_DEMAND);
-        mContentWebView.setWebViewClient(new WebViewClient());
         mContentWebView.getSettings().setJavaScriptEnabled(true);
         //mContentWebView.getSettings().setLoadWithOverviewMode(true);
 
@@ -124,4 +135,17 @@ public class ReaderFragment extends Fragment {
         return v;
     }
 
+    private WebViewClient webClient = new WebViewClient(){
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView  view, String  url){
+
+            Intent i = new Intent(mContext, ReaderWebViewActivity.class);
+            i.putExtra(ReaderWebViewActivity.KEY_URL, url);
+            startActivity(i);
+            return true;
+        }
+
+    };
 }
+
+

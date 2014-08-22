@@ -24,7 +24,8 @@ public class ReaderWebViewActivity extends Activity {
     private static final String TAG = "ReaderWebViewActivity";
 
     public static final String KEY_URL = "com.sigmobile.ucf_news.com.ReaderWebViewActivity.KEY_URL";
-    public static final String KEY_STORY = "com.sigmobile.ucf_news.ReaderWebViewActivity.com.KEY_STORY";
+    public static final String KEY_STORY = "com.sigmobile.ucf_news.ReaderWebViewActivity.com" +
+            ".KEY_STORY";
 
     private String mUrl;
     private int mPos;
@@ -37,16 +38,15 @@ public class ReaderWebViewActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
+ //       mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
         mUrl = getIntent().getStringExtra(KEY_URL);
         mPos = getIntent().getIntExtra(FeedPagerActivity.EXTRA_POSITION, 0);
 
 
-        setContentView(R.layout.fragment_sports);
+        setContentView(R.layout.activity_webview);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setMax(100);
-        final TextView titleTextView = (TextView) findViewById(R.id.titleTextView);
 
         mWebView = (WebView) findViewById(R.id.webView);
         mWebView.getSettings().setJavaScriptEnabled(true);
@@ -76,11 +76,6 @@ public class ReaderWebViewActivity extends Activity {
                 }
 
             }
-
-            @Override
-            public void onReceivedTitle(WebView view, String title) {
-                titleTextView.setText(title);
-            }
         });
 
         mWebView.loadUrl(mUrl);
@@ -96,7 +91,21 @@ public class ReaderWebViewActivity extends Activity {
                 upIntent.putExtra(FeedPagerActivity.EXTRA_POSITION, mPos);
                 NavUtils.navigateUpTo(this, upIntent);
 
+
                 return true;
+
+            case R.id.goBack:
+                if (mWebView.canGoBack()) {
+                    mWebView.goBack();
+                }
+                return true;
+
+            case R.id.goForward:
+                if (mWebView.canGoForward()) {
+                    mWebView.goForward();
+                }
+                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -132,6 +141,8 @@ public class ReaderWebViewActivity extends Activity {
 
         MenuItem share = menu.findItem(R.id.action_share);
         share.setVisible(false);
+
+
 
         return super.onPrepareOptionsMenu(menu);
     }

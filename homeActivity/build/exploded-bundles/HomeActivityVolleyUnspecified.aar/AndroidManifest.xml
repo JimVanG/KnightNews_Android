@@ -1,7 +1,0 @@
-<!-- From: file:/Users/jjvg/AndroidStudioProjects/HomeActivity/volley/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.android.volley">
-
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8"/>
-
-    <application/>
-
-</manifest>
