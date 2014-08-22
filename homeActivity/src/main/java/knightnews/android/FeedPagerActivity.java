@@ -1,6 +1,7 @@
 package knightnews.android;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -49,14 +50,16 @@ public class FeedPagerActivity extends ActionBarActivity {
     private float x1 = 0, x2 = 0;
 
     private ViewPager mPager;
+    private Context mContext;
 
     @TargetApi(11)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        fetchNewsItems();
+        mContext = this;
 
+        fetchNewsItems();
 
         mPager = new ViewPager(this);
         mPager.setId(R.id.viewPager);
@@ -86,15 +89,15 @@ public class FeedPagerActivity extends ActionBarActivity {
                             // Log.d(TAG, "*TAP*");
                             v.playSoundEffect(SoundEffectConstants.CLICK);
 
-                                Intent i = new Intent(getApplicationContext(),
-                                        ReaderActivity.class);
-                                i.putExtra(ReaderFragment.KEY_STORY, StoryListManager
-                                        .getInstance(getApplicationContext())
-                                        .getStoryList().get(mPager.getCurrentItem()));
-                                i.putExtra(EXTRA_POSITION, mPager.getCurrentItem());
+                            Intent i = new Intent(getApplicationContext(),
+                                    ReaderActivity.class);
+                            i.putExtra(ReaderFragment.KEY_STORY, StoryListManager
+                                    .getInstance(getApplicationContext())
+                                    .getStoryList().get(mPager.getCurrentItem()));
+                            i.putExtra(EXTRA_POSITION, mPager.getCurrentItem());
 
-                                startActivity(i);
-                            }
+                            startActivity(i);
+                        }
                         //}
                         break;
                 }
@@ -120,7 +123,8 @@ public class FeedPagerActivity extends ActionBarActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        RequestManager.getInstance(this).cancelRequestByTag(TAG);
+        RequestManager.getInstance(mContext).cancelRequestByTag(TAG);
+        mContext = null;
     }
 
     @Override
@@ -131,7 +135,7 @@ public class FeedPagerActivity extends ActionBarActivity {
 
     private void setUpAdapter() {
 
-        if (StoryListManager.getInstance(this).getStoryList() != null) {
+        if (StoryListManager.getInstance(mContext).getStoryList() != null) {
             mPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
         } else {
             mPager.setAdapter(null);
@@ -158,7 +162,7 @@ public class FeedPagerActivity extends ActionBarActivity {
             }
         }
         );
-        RequestManager.getInstance(this).addToRequestQueue(mRequest, TAG);
+        RequestManager.getInstance(mContext).addToRequestQueue(mRequest, TAG);
     }
 
     private void checkFirstTime() {
@@ -170,7 +174,7 @@ public class FeedPagerActivity extends ActionBarActivity {
             dia.show(getSupportFragmentManager(), "FirstTimeDialog");
 
             // record the fact that the app has been started at least once
-            settings.edit().putBoolean("my_first_time", false).commit();
+            settings.edit().putBoolean("my_first_time", false).apply();
         }
     }
 
@@ -180,6 +184,24 @@ public class FeedPagerActivity extends ActionBarActivity {
 
         try {
             JSONArray posts = response.getJSONArray(TAG_POSTS);
+
+            //check if to make sure we don't add duplicate stories by comparing the titles
+            //of the first stories.
+            if (StoryListManager.getInstance(mContext).sizeOfStoryList() > 0) {
+                StoryItem testStoryItem = new StoryItem();
+                JSONObject testObj = posts.getJSONObject(0);
+                testStoryItem.setTitle(testObj.getString(TAG_TITLE_PLAIN));
+                String testTitle = testStoryItem.getTitle();
+
+                if (testTitle.equals(StoryListManager.getInstance(mContext).getStoryItemAt(0)
+                        .getTitle())) {
+                    return;
+                } else {
+                    //If we have a new story just get rid of the old ones
+                    //so we don't create duplicates when adding the new story.
+                    StoryListManager.getInstance(mContext).removeAllStories();
+                }
+            }
 
             for (int i = 0; i < posts.length(); i++) {
                 JSONObject p = posts.getJSONObject(i);
@@ -205,7 +227,7 @@ public class FeedPagerActivity extends ActionBarActivity {
                 item.setPictureUrl(img);
                 item.setAuthor(name);
 
-                StoryListManager.getInstance(this).addStory(item);
+                StoryListManager.getInstance(mContext).addStory(item);
             }
 
         } catch (JSONException e) {
@@ -230,7 +252,7 @@ public class FeedPagerActivity extends ActionBarActivity {
 
         @Override
         public int getCount() {
-            return StoryListManager.getInstance(getApplicationContext())
+            return StoryListManager.getInstance(mContext)
                     .getStoryList().size();
         }
     }

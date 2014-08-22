@@ -186,7 +186,7 @@ public class HomeActivity extends Activity {
                     .error(R.drawable
                             .news_error)
                     .into(mImageButtonNews);
-        }else{
+        } else {
             mImageButtonNews.setImageResource(R.drawable.news_error);
         }
 

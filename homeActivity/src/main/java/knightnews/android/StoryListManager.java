@@ -6,30 +6,41 @@ import java.util.ArrayList;
 
 public class StoryListManager {
 
-	private static final String TAG = "StoryListManager";
+    private static final String TAG = "StoryListManager";
 
-	private ArrayList<StoryItem> mItems;
-	private static StoryListManager sInstance;
-	private Context mAppContext;
+    private ArrayList<StoryItem> mItems;
+    private static StoryListManager sInstance;
+    private Context mAppContext;
 
-	private StoryListManager(Context context) {
-		mAppContext = context;
-		mItems = new ArrayList<StoryItem>();
-	}
+    private StoryListManager(Context context) {
+        mAppContext = context;
+        mItems = new ArrayList<StoryItem>();
+    }
 
-	public static StoryListManager getInstance(Context c) {
-		if (sInstance == null) {
-			sInstance = new StoryListManager(c.getApplicationContext());
-		}
-		return sInstance;
-	}
+    public static StoryListManager getInstance(Context c) {
+        if (sInstance == null) {
+            sInstance = new StoryListManager(c.getApplicationContext());
+        }
+        return sInstance;
+    }
 
-	public ArrayList<StoryItem> getStoryList() {
-		return mItems;
-	}
+    public ArrayList<StoryItem> getStoryList() {
+        return mItems;
+    }
 
-	public void addStory(StoryItem story) {
-		getStoryList().add(story);
-	}
+    public void addStory(StoryItem story) {
+        getStoryList().add(story);
+    }
 
+    public int sizeOfStoryList() {
+        return getStoryList().size();
+    }
+
+    public StoryItem getStoryItemAt(int index) {
+        return getStoryList().get(index);
+    }
+
+    public void removeAllStories() {
+        mItems = new ArrayList<StoryItem>();
+    }
 }
