@@ -1,5 +1,6 @@
 package knightnews.android;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
- * Created by jjvg on 5/26/14.
+ * Created by James Van Gaasbeck on 5/26/14.
  */
 public class SportsFragment2 extends Fragment {
     private static final String TAG = "SportsFragment";
@@ -29,6 +30,7 @@ public class SportsFragment2 extends Fragment {
 
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_sports, container, false);

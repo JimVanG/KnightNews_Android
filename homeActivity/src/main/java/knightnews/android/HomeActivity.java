@@ -181,12 +181,15 @@ public class HomeActivity extends Activity {
     }
 
     private void setUpUi(int imagePosition, int athleticsPosition, int eventsPosistion) {
-        if (mListOfImageUrls != null) {
+        if (mListOfImageUrls != null && mListOfImageUrls.size() > 0) {
             Picasso.with(this).load(mListOfImageUrls.get(imagePosition)).fit()
                     .error(R.drawable
                             .news_error)
                     .into(mImageButtonNews);
+        }else{
+            mImageButtonNews.setImageResource(R.drawable.news_error);
         }
+
         if (mAthleticsDrawables != null) {
             mImageButtonSports.setImageResource(mAthleticsDrawables[athleticsPosition]);
         }
