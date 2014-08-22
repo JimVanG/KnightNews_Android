@@ -84,11 +84,11 @@
         <activity
             android:name=".ReaderWebViewActivity"
             android:label="@string/app_name"
-            android:parentActivityName="knightnews.android.FeedPagerActivity"
+            android:parentActivityName="knightnews.android.ReaderActivity"
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.FeedPagerActivity"/>
+                android:value="com.sigmobile.ucf_news.ReaderActivity"/>
         </activity>
         <activity
             android:name="knightnews.android.FeedActivity"

@@ -38,7 +38,7 @@ public class ReaderWebViewActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //       mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
+        mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
         mUrl = getIntent().getStringExtra(KEY_URL);
         mPos = getIntent().getIntExtra(FeedPagerActivity.EXTRA_POSITION, 0);
 
@@ -107,9 +107,8 @@ public class ReaderWebViewActivity extends Activity {
             case android.R.id.home:
                 Intent upIntent = NavUtils.getParentActivityIntent(this);
                 upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                upIntent.putExtra(FeedPagerActivity.EXTRA_POSITION, mPos);
+                upIntent.putExtra(ReaderFragment.KEY_STORY, mStory);
                 NavUtils.navigateUpTo(this, upIntent);
-
 
                 return true;
 

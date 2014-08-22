@@ -152,6 +152,7 @@ public class ReaderFragment extends Fragment {
 
             Intent i = new Intent(mContext, ReaderWebViewActivity.class);
             i.putExtra(ReaderWebViewActivity.KEY_URL, url);
+            i.putExtra(ReaderWebViewActivity.KEY_STORY, mStory);
             startActivity(i);
 
             return true;
