@@ -12,18 +12,5 @@
         android:title="@string/open_in_browser"
         app:showAsAction="collapseActionView"/>
 
-    <item
-        android:id="@+id/goBack"
-        android:title="back"
-        android:icon="@android:drawable/ic_media_previous"
-        app:showAsAction="ifRoom"
-        />
-    <item
-        android:id="@+id/goForward"
-        android:title="forward"
-        android:icon="@android:drawable/ic_media_next"
-        app:showAsAction="ifRoom"
-        />
-
 
 </menu>

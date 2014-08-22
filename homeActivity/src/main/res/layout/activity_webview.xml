@@ -2,7 +2,8 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:id="@+id/parent">
 
 
     <WebView
@@ -10,36 +11,38 @@
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_layout"/>
+        android:layout_below="@+id/progressBar"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@id/button_layout"
-        android:layout_above="@+id/progressBar">
+        android:id="@+id/button_layout"
+        android:background="@color/Black_Alpha_at_85"
+        android:layout_alignParentBottom="true">
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:id="@+id/back_button"
             android:background="@android:drawable/ic_media_previous"/>
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_gravity="start"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:id="@+id/forward_button"
             android:background="@android:drawable/ic_media_next"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <ProgressBar
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@id/progressBar"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:visibility="invisible"
         style="?android:progressBarStyleHorizontal"/>
 

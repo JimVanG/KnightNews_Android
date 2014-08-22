@@ -102,6 +102,17 @@ public class ReaderFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+
+        MenuItem item = menu.findItem(R.id.open_in_browser);
+        item.setVisible(true);
+
+        item = menu.findItem(R.id.action_share);
+        item.setVisible(true);
+
+    }
+
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -142,6 +153,7 @@ public class ReaderFragment extends Fragment {
             Intent i = new Intent(mContext, ReaderWebViewActivity.class);
             i.putExtra(ReaderWebViewActivity.KEY_URL, url);
             startActivity(i);
+
             return true;
         }
 

@@ -27,6 +27,8 @@
     0% — 00
      -->
     <color name="Black">#000000</color>
+    <color name="Black_Alpha_at_90">#E6000000</color>
+    <color name="Black_Alpha_at_85">#D9000000</color>
     <color name="Black_Alpha_at_75">#BF000000</color>
     <color name="Black_Alpha_at_70">#B3000000</color>
     <color name="Black_Alpha_at_65">#A6000000</color>

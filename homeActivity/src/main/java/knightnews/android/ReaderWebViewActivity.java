@@ -14,8 +14,8 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 /**
  * Created by jjvg on 5/26/14.
@@ -38,10 +38,9 @@ public class ReaderWebViewActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
- //       mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
+        //       mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
         mUrl = getIntent().getStringExtra(KEY_URL);
         mPos = getIntent().getIntExtra(FeedPagerActivity.EXTRA_POSITION, 0);
-
 
         setContentView(R.layout.activity_webview);
 
@@ -79,6 +78,26 @@ public class ReaderWebViewActivity extends Activity {
         });
 
         mWebView.loadUrl(mUrl);
+
+        ImageButton forwardButton = (ImageButton) findViewById(R.id.forward_button);
+        forwardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mWebView.canGoForward()) {
+                    mWebView.goForward();
+                }
+            }
+        });
+
+        ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mWebView.canGoBack()) {
+                    mWebView.goBack();
+                }
+            }
+        });
     }
 
 
@@ -92,18 +111,6 @@ public class ReaderWebViewActivity extends Activity {
                 NavUtils.navigateUpTo(this, upIntent);
 
 
-                return true;
-
-            case R.id.goBack:
-                if (mWebView.canGoBack()) {
-                    mWebView.goBack();
-                }
-                return true;
-
-            case R.id.goForward:
-                if (mWebView.canGoForward()) {
-                    mWebView.goForward();
-                }
                 return true;
 
         }
@@ -136,13 +143,11 @@ public class ReaderWebViewActivity extends Activity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
 
-        MenuItem openInBrowser = menu.findItem(R.id.open_in_browser);
-        openInBrowser.setVisible(false);
+        MenuItem item = menu.findItem(R.id.open_in_browser);
+        item.setVisible(false);
 
-        MenuItem share = menu.findItem(R.id.action_share);
-        share.setVisible(false);
-
-
+        item = menu.findItem(R.id.action_share);
+        item.setVisible(false);
 
         return super.onPrepareOptionsMenu(menu);
     }
