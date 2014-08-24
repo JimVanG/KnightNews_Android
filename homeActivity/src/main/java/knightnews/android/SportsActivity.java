@@ -12,6 +12,8 @@ import android.support.v7.app.ActionBarActivity;
  */
 public class SportsActivity extends ActionBarActivity {
 
+    public static final String KEY_SELECTED_TAB = "com.sigmobile.ucf_news.SportsActivity.com" +
+            ".KEY_SELECTED_TAB";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,17 +21,31 @@ public class SportsActivity extends ActionBarActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        ActionBar.Tab tab = actionBar.newTab()
+        ActionBar.Tab tab1 = actionBar.newTab()
                 .setText("Football")
                 .setTabListener(new TabListener<SportsFragment>(
                         this, "artist", SportsFragment.class));
-        actionBar.addTab(tab);
+        actionBar.addTab(tab1);
 
-        tab = actionBar.newTab()
+        ActionBar.Tab tab2 = actionBar.newTab()
                 .setText("Basketball")
                 .setTabListener(new TabListener<SportsFragment2>(
                         this, "album", SportsFragment2.class));
-        actionBar.addTab(tab);
+        actionBar.addTab(tab2);
+
+        int theSelectedTab = getIntent().getIntExtra(SportsActivity.KEY_SELECTED_TAB, 0);
+        switch (theSelectedTab){
+            case 0:
+                actionBar.selectTab(tab1);
+                break;
+            case 1:
+                actionBar.selectTab(tab2);
+                break;
+            default:
+                actionBar.selectTab(tab1);
+                break;
+        }
+
 
 //        tab = actionBar.newTab()
 //                .setText("Baseball")

@@ -152,8 +152,6 @@ public class FeedPagerActivity extends ActionBarActivity {
 
                         parseJSON(response);
                         setUpAdapter();
-
-
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -195,6 +193,7 @@ public class FeedPagerActivity extends ActionBarActivity {
 
                 if (testTitle.equals(StoryListManager.getInstance(mContext).getStoryItemAt(0)
                         .getTitle())) {
+                    //return because the stories are the same
                     return;
                 } else {
                     //If we have a new story just get rid of the old ones
@@ -244,8 +243,7 @@ public class FeedPagerActivity extends ActionBarActivity {
         @Override
         public Fragment getItem(int pos) {
             StoryItem abridgedStory = StoryListManager
-                    .getInstance(getApplicationContext()).getStoryList()
-                    .get(pos);
+                    .getInstance(getApplicationContext()).getStoryItemAt(pos);
 
             return AbridgedStoryFragment.newInstance(abridgedStory);
         }
@@ -253,7 +251,7 @@ public class FeedPagerActivity extends ActionBarActivity {
         @Override
         public int getCount() {
             return StoryListManager.getInstance(mContext)
-                    .getStoryList().size();
+                    .sizeOfStoryList();
         }
     }
 

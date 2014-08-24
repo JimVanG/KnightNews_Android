@@ -29,7 +29,6 @@ public class ReaderFragment extends Fragment {
     private StoryItem mStory;
     private ShareActionProvider mShareActionProvider;
     private Context mContext;
-    private String initialWebViewUrl;
 
     public ReaderFragment() {
     }
@@ -48,7 +47,6 @@ public class ReaderFragment extends Fragment {
 
        // setRetainInstance(true);
         mContext = getActivity();
-
 
         // get the fragments arguments
         Bundle args = getArguments();
@@ -98,7 +96,6 @@ public class ReaderFragment extends Fragment {
 
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
 
@@ -110,7 +107,6 @@ public class ReaderFragment extends Fragment {
 
         item = menu.findItem(R.id.action_share);
         item.setVisible(true);
-
     }
 
     @SuppressLint("SetJavaScriptEnabled")
