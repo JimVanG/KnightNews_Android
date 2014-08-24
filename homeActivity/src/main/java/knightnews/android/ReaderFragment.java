@@ -58,10 +58,18 @@ public class ReaderFragment extends Fragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        mContentWebView.onPause();
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         mContext = null;
     }
+
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
