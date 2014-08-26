@@ -19,6 +19,7 @@ import android.view.View.OnTouchListener;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.parse.ParseAnalytics;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,6 +57,8 @@ public class FeedPagerActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ParseAnalytics.trackAppOpened(getIntent());
 
         mContext = this;
 
