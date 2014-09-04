@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
@@ -59,6 +60,7 @@ public class FeedPagerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         ParseAnalytics.trackAppOpened(getIntent());
+
 
         mContext = this;
 
@@ -128,6 +130,23 @@ public class FeedPagerActivity extends ActionBarActivity {
         super.onDestroy();
         RequestManager.getInstance(mContext).cancelRequestByTag(TAG);
         mContext = null;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                //home brewed "upwards navigation" to allow for upwards nav
+                //after being opened from a parse notification.
+                Intent upIntent = new Intent(mContext, HomeActivity.class);
+                upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent
+                        .FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(upIntent);
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

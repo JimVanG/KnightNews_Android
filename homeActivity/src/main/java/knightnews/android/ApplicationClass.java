@@ -17,7 +17,11 @@ public class ApplicationClass extends Application {
         Parse.initialize(this, "keKOe5UZxrEWyX3UX4NQMLXsajd1xmG2t7op7FhP",
                 "0qqLP5RyNi2iF9OuHzeMJhs2VxmDOLc77uZ7yX7C");
 
+        //the default notification opens the app at the FeedPagerActivity
         PushService.setDefaultPushCallback(this, FeedPagerActivity.class);
+
+        //If the notification is sent via the "Alerts" channel just open the app to the homepage
+        PushService.subscribe(this, "Alerts", HomeActivity.class);
 
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }

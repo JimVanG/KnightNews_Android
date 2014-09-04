@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.parse.ParseAnalytics;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -63,8 +64,10 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.activity_home);
+
+        ParseAnalytics.trackAppOpened(getIntent());
+
         mContext = this;
         mListOfImageUrls = new ArrayList<String>();
 
