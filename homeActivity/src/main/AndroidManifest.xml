@@ -148,6 +148,15 @@
                 <category android:name="knightnews.android"/>
             </intent-filter>
         </receiver>
+
+        <receiver
+            android:name="knightnews.android.NewsReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="knightnews.android.UPDATE_STATUS"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

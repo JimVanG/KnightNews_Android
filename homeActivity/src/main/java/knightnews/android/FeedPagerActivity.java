@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
@@ -20,7 +21,6 @@ import android.view.View.OnTouchListener;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.parse.ParseAnalytics;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,9 +58,6 @@ public class FeedPagerActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ParseAnalytics.trackAppOpened(getIntent());
-
 
         mContext = this;
 
@@ -137,12 +134,9 @@ public class FeedPagerActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
 
-                //home brewed "upwards navigation" to allow for upwards nav
-                //after being opened from a parse notification.
-                Intent upIntent = new Intent(mContext, HomeActivity.class);
-                upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent
-                        .FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(upIntent);
+                Intent upIntent = NavUtils.getParentActivityIntent(this);
+                upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                NavUtils.navigateUpTo(this, upIntent);
 
                 return true;
         }
