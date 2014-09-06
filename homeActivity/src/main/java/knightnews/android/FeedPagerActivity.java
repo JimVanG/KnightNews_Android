@@ -39,7 +39,6 @@ public class FeedPagerActivity extends ActionBarActivity {
     private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
     private static final String TAG_POSTS = "posts";
     private static final String TAG_URL = "url";
-    private static final String TAG_TITLE = "title";
     private static final String TAG_TITLE_PLAIN = "title_plain";
     private static final String TAG_EXCERPT = "excerpt";
     private static final String TAG_CONTENT = "content";

@@ -150,7 +150,7 @@
         </receiver>
 
         <receiver
-            android:name="knightnews.android.NewsReceiver"
+            android:name="knightnews.android.PushNewsReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="knightnews.android.UPDATE_STATUS"/>

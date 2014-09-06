@@ -8,19 +8,24 @@ import android.app.TaskStackBuilder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+
 /**
  * Created by James Van Gaasbeck on 9/4/14.
  */
-public class NewsReceiver extends BroadcastReceiver {
+public class PushNewsReceiver extends BroadcastReceiver {
     private static final String TAG = "NewsReceiver";
 
-    private static final String TAG_POSTS = "posts";
     private static final String TAG_URL = "url";
     private static final String TAG_TITLE_PLAIN = "title_plain";
     private static final String TAG_EXCERPT = "excerpt";
@@ -37,8 +42,7 @@ public class NewsReceiver extends BroadcastReceiver {
     @TargetApi(16)
     @Override
     public void onReceive(Context context, Intent intent) {
-        String action = intent.getAction();
-        String channel = intent.getExtras().getString("com.parse.Channel");
+
         Intent notificationIntent;
         PendingIntent pendingIntent;
 
@@ -65,13 +69,27 @@ public class NewsReceiver extends BroadcastReceiver {
                         notificationIntent, 0);
             }
 
+            NotificationCompat.BigPictureStyle bigNote = new NotificationCompat.BigPictureStyle();
+            bigNote.setBigContentTitle(mStoryItem.getTitle());
+            bigNote.setSummaryText(mStoryItem.getDescription());
+
+            Bitmap storyPic = null;
+            try {
+                storyPic = BitmapFactory.decodeStream((InputStream) new URL(mStoryItem
+                        .getPictureUrl()).getContent());
+            } catch (IOException e) {
+                storyPic = BitmapFactory.decodeResource(context.getResources(),
+                        R.drawable.news_error);
+                e.printStackTrace();
+            }
+            bigNote.bigPicture(storyPic);
 
             Notification note = new NotificationCompat.Builder(context).setTicker(mStoryItem
                     .getTitle())
                     .setContentTitle(mStoryItem.getTitle()).setContentText(mStoryItem
                             .getDescription()).setContentIntent(pendingIntent).setSmallIcon(
-                            R.drawable.news_error).setAutoCancel
-                            (true).build();
+                            R.drawable.appicon).setAutoCancel
+                            (true).setStyle(bigNote).build();
 
             notificationManager.notify(NOTIFICATION_ID, note);
 
@@ -86,19 +104,16 @@ public class NewsReceiver extends BroadcastReceiver {
             return;
 
         try {
-
-            JSONObject p = response;
-
-            JSONObject customFields = p.getJSONObject("custom_fields");
+            JSONObject customFields = response.getJSONObject("custom_fields");
             String img = customFields.getString(TAG_IMAGE);
 
-            String title = p.getString(TAG_TITLE_PLAIN);
-            String url = p.getString(TAG_URL);
-            String content = p.getString(TAG_CONTENT);
-            String description = p.getString(TAG_EXCERPT);
-            String date = p.getString(TAG_DATE);
+            String title = response.getString(TAG_TITLE_PLAIN);
+            String url = response.getString(TAG_URL);
+            String content = response.getString(TAG_CONTENT);
+            String description = response.getString(TAG_EXCERPT);
+            String date = response.getString(TAG_DATE);
 
-            JSONObject author = p.getJSONObject(TAG_AUTHOR);
+            JSONObject author = response.getJSONObject(TAG_AUTHOR);
             String name = author.getString(TAG_NAME);
 
             mStoryItem = new StoryItem();
@@ -109,7 +124,6 @@ public class NewsReceiver extends BroadcastReceiver {
             mStoryItem.setUrl(url);
             mStoryItem.setPictureUrl(img);
             mStoryItem.setAuthor(name);
-
 
         } catch (JSONException e) {
             e.printStackTrace();

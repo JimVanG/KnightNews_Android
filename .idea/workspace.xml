@@ -25,16 +25,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: knightnews.android" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b6dae84-31c0-4d37-a911-f5cf516b98c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/NewsReceiver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/NewsReceiver.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ApplicationClass.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ApplicationClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HomeActivity.iws" />
@@ -107,10 +104,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApplicationClass.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ApplicationClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ApplicationClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50110865" vertical-offset="44" max-vertical-offset="495">
+            <state vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="495">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,8 +119,8 @@
       <file leaf-file-name="ReaderActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
-              <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="750">
+              <caret line="33" column="66" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -132,28 +129,18 @@
       <file leaf-file-name="FeedPagerActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1417" max-vertical-offset="4305">
-              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
+              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/NewsReceiver.java">
+      <file leaf-file-name="PushNewsReceiver.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1710">
-              <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1882" max-vertical-offset="2505">
-              <caret line="145" column="38" selection-start-line="145" selection-start-column="38" selection-end-line="145" selection-end-column="38" />
+            <state vertical-scroll-proportion="3.3680556" vertical-offset="0" max-vertical-offset="1830">
+              <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -1371,7 +1358,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/actionbar_tab_indicator_selected_pressed.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_home.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-large-land/activity_home.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-small-land/activity_home.xml" />
@@ -1417,11 +1403,12 @@
         <option value="$PROJECT_DIR$/homeActivity/build.gradle" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/HomeActivity.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderFragment.java" />
-        <option value="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ApplicationClass.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java" />
-        <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/NewsReceiver.java" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java" />
       </list>
     </option>
   </component>
@@ -2018,7 +2005,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2753623" sideWeight="0.47253636" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18820679" sideWeight="0.5024155" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25925925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22866344" sideWeight="0.5250404" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25925925" sideWeight="0.5250404" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2089,7 +2076,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="88" />
+      <option name="time" value="89" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -2372,14 +2359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1882" max-vertical-offset="2505">
-          <caret line="145" column="38" selection-start-line="145" selection-start-column="38" selection-end-line="145" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63237774" vertical-offset="0" max-vertical-offset="720">
@@ -2437,14 +2416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1417" max-vertical-offset="4305">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/homeActivity/libs/Parse-1.5.1.jar!/com/parse/Task.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8199446" vertical-offset="1399" max-vertical-offset="1785">
@@ -2453,29 +2424,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/NewsReceiver.java">
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ApplicationClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1710">
-          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="495">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="157" max-vertical-offset="750">
-          <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="750">
+          <caret line="33" column="66" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ApplicationClass.java">
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50110865" vertical-offset="44" max-vertical-offset="495">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.5193929" vertical-offset="1897" max-vertical-offset="2505">
+          <caret line="147" column="61" selection-start-line="147" selection-start-column="61" selection-end-line="147" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.3680556" vertical-offset="0" max-vertical-offset="1830">
+          <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
