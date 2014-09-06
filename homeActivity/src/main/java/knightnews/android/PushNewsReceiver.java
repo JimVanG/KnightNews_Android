@@ -88,7 +88,7 @@ public class PushNewsReceiver extends BroadcastReceiver {
                     .getTitle())
                     .setContentTitle(mStoryItem.getTitle()).setContentText(mStoryItem
                             .getDescription()).setContentIntent(pendingIntent).setSmallIcon(
-                            R.drawable.appicon).setAutoCancel
+                            R.drawable.ic_launcher).setAutoCancel
                             (true).setStyle(bigNote).build();
 
             notificationManager.notify(NOTIFICATION_ID, note);

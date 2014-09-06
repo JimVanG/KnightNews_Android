@@ -25,16 +25,20 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:id="@+id/back_button"
-            android:background="@android:drawable/ic_media_previous"/>
+            android:background="@drawable/ic_action_navigation_back"/>
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:id="@+id/forward_button"
-            android:background="@android:drawable/ic_media_next"/>
+            android:background="@drawable/ic_action_navigation_forward"/>
 
     </RelativeLayout>
 

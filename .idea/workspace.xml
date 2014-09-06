@@ -29,9 +29,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b6dae84-31c0-4d37-a911-f5cf516b98c2" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/NewsReceiver.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/ic_action_navigation_back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-mdpi/ic_action_navigation_back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xhdpi/ic_action_navigation_back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xxhdpi/ic_action_navigation_back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/ic_action_navigation_forward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-mdpi/ic_action_navigation_forward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xhdpi/ic_action_navigation_forward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xxhdpi/ic_action_navigation_forward.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/appicon.png" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xxhdpi/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_webview.xml" afterPath="$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_webview.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HomeActivity.iws" />
@@ -119,18 +131,8 @@
       <file leaf-file-name="ReaderActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="750">
-              <caret line="33" column="66" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeedPagerActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
-              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -139,8 +141,8 @@
       <file leaf-file-name="PushNewsReceiver.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.3680556" vertical-offset="0" max-vertical-offset="1830">
-              <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.4351852" vertical-offset="757" max-vertical-offset="1830">
+              <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -1358,7 +1360,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_home.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-large-land/activity_home.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout-small-land/activity_home.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/com/sigmobile/ucf_news/MyAlertDialogueFragment.java" />
@@ -1393,7 +1394,6 @@
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/menu/webViewMenu.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/menu/feed.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_webview.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderWebViewActivity.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/SportsWebViewActivity2.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/SportsActivity.java" />
@@ -1408,6 +1408,8 @@
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/NewsReceiver.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout/notification_custom_remote.xml" />
+        <option value="$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_webview.xml" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java" />
       </list>
     </option>
@@ -1571,6 +1573,126 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xxhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homeActivity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="drawable-hdpi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1698,15 +1820,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/homeActivity/libs" />
-      <recent name="$PROJECT_DIR$/homeActivity/src/main/res/layout" />
-      <recent name="$PROJECT_DIR$/homeActivity/src/main/res/menu" />
-      <recent name="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android" />
       <recent name="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi" />
+      <recent name="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xxhdpi" />
+      <recent name="$PROJECT_DIR$/homeActivity/src/main/res/drawable-xhdpi" />
+      <recent name="$PROJECT_DIR$/homeActivity/src/main/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/homeActivity/libs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/homeActivity/libs" />
       <recent name="$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi" />
+      <recent name="$PROJECT_DIR$/homeActivity/libs" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.homeActivity">
@@ -1996,8 +2118,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22061191" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33494365" sideWeight="0.56058156" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17391305" sideWeight="0.4749596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1987076" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -2018,9 +2142,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2080,16 +2202,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout-normal-land/activity_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8414634" vertical-offset="0" max-vertical-offset="4350">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.617849" vertical-offset="0" max-vertical-offset="437">
@@ -2122,11 +2234,6 @@
         <state vertical-scroll-proportion="0.2402746" vertical-offset="0" max-vertical-offset="437">
           <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/news_error.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_home.xml">
@@ -2215,11 +2322,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/EventsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3045">
@@ -2263,23 +2365,6 @@
         <state vertical-scroll-proportion="0.4859611" vertical-offset="0" max-vertical-offset="463">
           <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="705">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_webview.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="375" max-vertical-offset="825">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/UcfMapActivity.java">
@@ -2387,11 +2472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/appicon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/SportsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2680413" vertical-offset="0" max-vertical-offset="1545">
@@ -2434,14 +2514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="750">
-          <caret line="33" column="66" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5193929" vertical-offset="1897" max-vertical-offset="2505">
@@ -2450,18 +2522,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/news_error.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="705">
+          <caret line="28" column="2" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/drawable-mdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
+        <state vertical-scroll-proportion="-2.3333333" vertical-offset="1248" max-vertical-offset="4185">
           <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/ReaderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/drawable-hdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/src/main/res/layout/activity_webview.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37037036" vertical-offset="0" max-vertical-offset="885">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/PushNewsReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.3680556" vertical-offset="0" max-vertical-offset="1830">
-          <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.4351852" vertical-offset="757" max-vertical-offset="1830">
+          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
           <folding />
         </state>
       </provider>
