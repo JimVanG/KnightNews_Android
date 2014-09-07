@@ -42,7 +42,6 @@ public class FeedPagerActivity extends ActionBarActivity {
     private static final String TAG_TITLE_PLAIN = "title_plain";
     private static final String TAG_EXCERPT = "excerpt";
     private static final String TAG_CONTENT = "content";
-    private static final String TAG_DATE = "date";
     private static final String TAG_IMAGE = "image";
     private static final String TAG_AUTHOR = "author";
     private static final String TAG_NAME = "name";
@@ -59,6 +58,7 @@ public class FeedPagerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         mContext = this;
+
 
         fetchNewsItems();
 
@@ -99,7 +99,6 @@ public class FeedPagerActivity extends ActionBarActivity {
 
                             startActivity(i);
                         }
-                        //}
                         break;
                 }
                 return false;
@@ -167,6 +166,7 @@ public class FeedPagerActivity extends ActionBarActivity {
 
                         parseJSON(response);
                         setUpAdapter();
+
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -227,14 +227,13 @@ public class FeedPagerActivity extends ActionBarActivity {
                 String url = p.getString(TAG_URL);
                 String content = p.getString(TAG_CONTENT);
                 String description = p.getString(TAG_EXCERPT);
-                String date = p.getString(TAG_DATE);
+
 
                 JSONObject author = p.getJSONObject(TAG_AUTHOR);
                 String name = author.getString(TAG_NAME);
 
                 StoryItem item = new StoryItem();
                 item.setTitle(title);
-                item.setDate(date);
                 item.setContent(content);
                 item.setDescription(description);
                 item.setUrl(url);

@@ -21,6 +21,7 @@ public class AbridgedStoryFragment extends Fragment {
     private TextView mTextViewHeadline, mTextViewAuthor, mTextViewDesc;
     private StoryItem mItem;
 
+
     public AbridgedStoryFragment() {
     }
 
@@ -41,7 +42,6 @@ public class AbridgedStoryFragment extends Fragment {
         if (getArguments() != null) {
             mItem = (StoryItem) getArguments().getSerializable(KEY_STORYITEM);
         }
-
     }
 
     @Override
@@ -59,6 +59,7 @@ public class AbridgedStoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_abridged, container, false);
+
 
         mImageViewThumb = (ImageView) v
                 .findViewById(R.id.abridged_imageView_thumbnail);
@@ -82,5 +83,6 @@ public class AbridgedStoryFragment extends Fragment {
 
         return v;
     }
+
 
 }

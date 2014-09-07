@@ -16,7 +16,6 @@ import android.support.v4.app.NotificationCompat;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
@@ -30,7 +29,6 @@ public class PushNewsReceiver extends BroadcastReceiver {
     private static final String TAG_TITLE_PLAIN = "title_plain";
     private static final String TAG_EXCERPT = "excerpt";
     private static final String TAG_CONTENT = "content";
-    private static final String TAG_DATE = "date";
     private static final String TAG_IMAGE = "image";
     private static final String TAG_AUTHOR = "author";
     private static final String TAG_NAME = "name";
@@ -77,7 +75,7 @@ public class PushNewsReceiver extends BroadcastReceiver {
             try {
                 storyPic = BitmapFactory.decodeStream((InputStream) new URL(mStoryItem
                         .getPictureUrl()).getContent());
-            } catch (IOException e) {
+            } catch (Exception e) {
                 storyPic = BitmapFactory.decodeResource(context.getResources(),
                         R.drawable.news_error);
                 e.printStackTrace();
@@ -86,8 +84,9 @@ public class PushNewsReceiver extends BroadcastReceiver {
 
             Notification note = new NotificationCompat.Builder(context).setTicker(mStoryItem
                     .getTitle())
-                    .setContentTitle(mStoryItem.getTitle()).setContentText(mStoryItem
-                            .getDescription()).setContentIntent(pendingIntent).setSmallIcon(
+                    .setContentTitle(context.getResources().getString(R.string.app_name))
+                    .setContentText(mStoryItem
+                            .getTitle()).setContentIntent(pendingIntent).setSmallIcon(
                             R.drawable.ic_launcher).setAutoCancel
                             (true).setStyle(bigNote).build();
 
@@ -111,14 +110,12 @@ public class PushNewsReceiver extends BroadcastReceiver {
             String url = response.getString(TAG_URL);
             String content = response.getString(TAG_CONTENT);
             String description = response.getString(TAG_EXCERPT);
-            String date = response.getString(TAG_DATE);
 
             JSONObject author = response.getJSONObject(TAG_AUTHOR);
             String name = author.getString(TAG_NAME);
 
             mStoryItem = new StoryItem();
             mStoryItem.setTitle(title);
-            mStoryItem.setDate(date);
             mStoryItem.setContent(content);
             mStoryItem.setDescription(description);
             mStoryItem.setUrl(url);
