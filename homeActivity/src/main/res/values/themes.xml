@@ -9,11 +9,15 @@
         <item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
 
 
+
+
         <!-- Support library compatibility -->
         <item name="actionBarTabStyle">@style/MyActionBarTabs</item>
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="actionBarTabTextStyle">@style/MyActionBarTabText</item>
         <item name="actionMenuTextColor">@color/Old_Gold</item>
+
+
     </style>
 
     <!-- ActionBar styles -->

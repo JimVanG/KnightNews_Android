@@ -5,7 +5,10 @@
               android:orientation="vertical"
               android:weightSum="4.0"
               android:id="@+id/root"
-              android:background="@color/Black">
+              android:background="@color/Black"
+
+    >
+
 
     <RelativeLayout
         android:layout_width="match_parent"

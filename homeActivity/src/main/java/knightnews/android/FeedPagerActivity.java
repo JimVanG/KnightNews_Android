@@ -164,6 +164,7 @@ public class FeedPagerActivity extends ActionBarActivity {
 //                            VolleyLog.v("Response:%n %s", response.toString(4));
 //                            Log.i(TAG, "Response: " + response.toString());
 
+
                         parseJSON(response);
                         setUpAdapter();
 
