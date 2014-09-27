@@ -8,7 +8,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 19
 
-        testPackageName "com.android.volley.tests"
+        testApplicationId "com.android.volley.tests"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
     buildTypes {
