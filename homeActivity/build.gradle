@@ -9,15 +9,20 @@ android {
         versionCode 16
         versionName '2.4.0'
     }
+
     signingConfigs {
         release {
             storeFile file("knight_news_keystore.keystore")
-            storePassword "ucfnews09"
+            storePassword ""
             keyAlias "knightnews"
-            keyPassword "ucfnews09"
+            keyPassword ""
         }
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".d"
+            versionNameSuffix "-debug"
+        }
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
@@ -39,4 +44,30 @@ dependencies {
     compile 'com.google.android.gms:play-services:4.4.52'
     compile files('libs/picasso-2.2.0.jar')
     compile files('libs/Parse-1.5.1.jar')
+}
+
+/*
+    Building for release must occur from the command line, use this task "./gradlew assembleRelease".
+    But a regular debug build is fine running from just Android Studio, use the "run" button.
+ */
+gradle.taskGraph.whenReady { taskGraph ->
+    // Only execute when we are trying to assemble a release build
+    if (taskGraph.hasTask(':homeActivity:assembleRelease')) {
+        //get the storePassword from the console
+        def keyStorePass = System.console().readPassword("\nPlease enter keystore password: ")
+        // readPassword returns a char[] so we need to wrap it into a string, because that's
+        // most likely what you need
+        keyStorePass = new String(keyStorePass)
+
+        //get the keyPassword from the console
+        def keyPass = System.console().readPassword("\nPlease enter the key password: ")
+
+        keyPass = new String(keyPass)
+
+        //set the storePassword and the keyPassword
+        android.signingConfigs.release.storePassword = keyStorePass
+        android.signingConfigs.release.keyPassword = keyPass
+
+
+    }
 }
