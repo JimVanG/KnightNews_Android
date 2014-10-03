@@ -37,10 +37,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b6dae84-31c0-4d37-a911-f5cf516b98c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/AbridgedStoryFragment.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/AbridgedStoryFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/HomeActivity.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/HomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/StoryItem.java" afterPath="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/StoryItem.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/homeActivity/knight_news_keystore.keystore" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeActivity/build.gradle" afterPath="$PROJECT_DIR$/homeActivity/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HomeActivity.iws" />
@@ -113,21 +111,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HomeActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HomeActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27251732" vertical-offset="2102" max-vertical-offset="3435">
-              <caret line="192" column="82" selection-start-line="192" selection-start-column="82" selection-end-line="192" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2840" max-vertical-offset="3435">
+              <caret line="200" column="65" selection-start-line="200" selection-start-column="65" selection-end-line="200" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1260">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.65502185" vertical-offset="0" max-vertical-offset="1350">
+              <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -1066,7 +1064,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5647667912000" />
+        <entry key="$PROJECT_DIR$" value="5647670720000" />
         <entry key="$PROJECT_DIR$/../WordPress-Android-App-Challenge_2.6" value="1391323574000" />
       </map>
     </option>
@@ -1496,11 +1494,11 @@
         <option value="$PROJECT_DIR$/homeActivity/src/main/res/values/themes.xml" />
         <option value="$PROJECT_DIR$/snackbar/build.gradle" />
         <option value="$PROJECT_DIR$/volley/build.gradle" />
-        <option value="$PROJECT_DIR$/homeActivity/build.gradle" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/StoryItem.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/AbridgedStoryFragment.java" />
         <option value="$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/homeActivity/build.gradle" />
       </list>
     </option>
   </component>
@@ -2075,13 +2073,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="739" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2199037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2199037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30176565" sideWeight="0.56058156" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17391305" sideWeight="0.4749596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1987076" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -2089,7 +2087,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26003212" sideWeight="0.4749596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18820679" sideWeight="0.5032538" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25842696" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26003212" sideWeight="0.5250404" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26003212" sideWeight="0.5250404" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2583,14 +2581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1260">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/FeedPagerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2735" max-vertical-offset="4200">
@@ -2611,8 +2601,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/src/main/java/knightnews/android/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27251732" vertical-offset="2102" max-vertical-offset="3435">
-          <caret line="192" column="82" selection-start-line="192" selection-start-column="82" selection-end-line="192" selection-end-column="82" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2840" max-vertical-offset="3435">
+          <caret line="200" column="65" selection-start-line="200" selection-start-column="65" selection-end-line="200" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65502185" vertical-offset="0" max-vertical-offset="1350">
+          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
           <folding />
         </state>
       </provider>

@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+/* Variables */
+ext.currentUser = System.getenv("USER")
+ext.userHome = System.getProperty("user.home")
+ext.keystorePath = '/Documents/KnightNewsReleases/knight_news_keystore.keystore'
+
 android {
     compileSdkVersion 19
     buildToolsVersion '20.0.0'
@@ -13,19 +18,20 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("knight_news_keystore.keystore")
+            //storeFile file("knight_news_keystore.keystore")
+            storeFile file(userHome + keystorePath)
             storePassword ""
             keyAlias "knightnews"
             keyPassword ""
         }
     }
-    
+
     buildTypes {
         debug {
             applicationIdSuffix ".d"
             versionNameSuffix "-debug"
         }
-        
+
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
