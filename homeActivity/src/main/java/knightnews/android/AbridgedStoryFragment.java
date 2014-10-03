@@ -60,14 +60,18 @@ public class AbridgedStoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_abridged, container, false);
 
-
         mImageViewThumb = (ImageView) v
                 .findViewById(R.id.abridged_imageView_thumbnail);
-        Picasso.with(getActivity()).load(mItem.getPictureUrl()).fit()
-                .noFade()
-                .error(R.drawable
-                        .news_error)
-                .into(mImageViewThumb);
+        if (!mItem.getPictureUrl().equals(HomeActivity.ERROR_IMAGE)) {
+
+            Picasso.with(getActivity()).load(mItem.getPictureUrl()).fit()
+                    .noFade()
+                    .error(R.drawable
+                            .news_error)
+                    .into(mImageViewThumb);
+        } else {
+            mImageViewThumb.setImageResource(R.drawable.news_error);
+        }
 
         mTextViewHeadline = (TextView) v
                 .findViewById(R.id.abridged_imageView_headline);

@@ -222,7 +222,8 @@ public class FeedPagerActivity extends ActionBarActivity {
                 JSONObject p = posts.getJSONObject(i);
 
                 JSONObject customFields = p.getJSONObject("custom_fields");
-                String img = customFields.getString(TAG_IMAGE);
+                String img = customFields.optString(TAG_IMAGE, HomeActivity.ERROR_IMAGE);
+
 
                 String title = p.getString(TAG_TITLE_PLAIN);
                 String url = p.getString(TAG_URL);

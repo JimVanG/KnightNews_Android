@@ -30,6 +30,7 @@ import java.util.List;
 public class HomeActivity extends Activity {
     private static final String TAG = "HomeActivity";
 
+    public static final String ERROR_IMAGE = "error_image";
 
     private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
     private static final String STATE_NEWS_POSITION = "com.sigmobile.ucf_news.HomeActivity" +
@@ -187,13 +188,14 @@ public class HomeActivity extends Activity {
 
     private void setUpUi(int imagePosition, int athleticsPosition, int eventsPosistion) {
         if (mListOfImageUrls != null && mListOfImageUrls.size() > 0) {
-            Picasso.with(this).load(mListOfImageUrls.get(imagePosition)).fit()
-                    .error(R.drawable
-                            .news_error)
-                    .into(mImageButtonNews);
 
-
-            //     snackBar.show("Change!", "What's up", style);
+            if (!mListOfImageUrls.get(imagePosition).equals(HomeActivity.ERROR_IMAGE))
+                Picasso.with(this).load(mListOfImageUrls.get(imagePosition)).fit()
+                        .error(R.drawable
+                                .news_error)
+                        .into(mImageButtonNews);
+            else
+                mImageButtonNews.setImageResource(R.drawable.news_error);
 
         } else {
             mImageButtonNews.setImageResource(R.drawable.news_error);
@@ -260,7 +262,7 @@ public class HomeActivity extends Activity {
                 JSONObject p = posts.getJSONObject(i);
 
                 JSONObject customFields = p.getJSONObject("custom_fields");
-                String img = customFields.getString("image");
+                String img = customFields.optString("image", HomeActivity.ERROR_IMAGE);
 
                 StoryItem item = new StoryItem();
                 item.setPictureUrl(img);

@@ -11,175 +11,176 @@ import java.net.URL;
 
 public class StoryItem implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 2274504092267548833L;
-	// We will at least need a title and a URL to the story. I'm not sure what
-	// other xml attributes are in the the feed, we can add more later, like a
-	// url to a picture or something
-	private String mTitle, mUnparsedTitle;
-	private String mUrl;
-	private String mContent, mUnparsedContent, mContentNoVideo;
-	private String mDate;
-	private String mPictureUrl;
-	private String mAuthor;
-	private String mDescription, mUnParsedDescription;
-	private Drawable mImageDrawable;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 2274504092267548833L;
+    // We will at least need a title and a URL to the story. I'm not sure what
+    // other xml attributes are in the the feed, we can add more later, like a
+    // url to a picture or something
+    private String mTitle, mUnparsedTitle;
+    private String mUrl;
+    private String mContent, mUnparsedContent, mContentNoVideo;
+    private String mDate;
+    private String mPictureUrl;
+    private String mAuthor;
+    private String mDescription, mUnParsedDescription;
+    private Drawable mImageDrawable;
 
-	@Override
-	public String toString() {
-		// Make the default toString() method for a story return the title.
-		return mTitle;
-	}
+    @Override
+    public String toString() {
+        // Make the default toString() method for a story return the title.
+        return mTitle;
+    }
 
-	public String getTitle() {
-		return mTitle;
-	}
+    public String getTitle() {
+        return mTitle;
+    }
 
-	public void setTitle(String title) {
-		setUnparsedTitle(title);
-		mTitle = parseHTML(title);
-	}
+    public void setTitle(String title) {
+        setUnparsedTitle(title);
+        mTitle = parseHTML(title);
+    }
 
-	public String getUnparsedTitle() {
-		return mUnparsedTitle;
-	}
+    public String getUnparsedTitle() {
+        return mUnparsedTitle;
+    }
 
-	public void setUnparsedTitle(String unparsedTitle) {
-		mUnparsedTitle = unparsedTitle;
-	}
+    public void setUnparsedTitle(String unparsedTitle) {
+        mUnparsedTitle = unparsedTitle;
+    }
 
-	public String getUrl() {
-		return mUrl;
-	}
+    public String getUrl() {
+        return mUrl;
+    }
 
-	public void setUrl(String url) {
-		mUrl = url;
-	}
+    public void setUrl(String url) {
+        mUrl = url;
+    }
 
-	public String getContent() {
-		return mContent;
-	}
+    public String getContent() {
+        return mContent;
+    }
 
-	/**
-	 * 
-	 * @param content
-	 *            - the story content.
-	 * 
-	 *            This method sets to variables, it sets the unparsed Contents
-	 *            to a variable and also sets the parsed out content to a
-	 *            variable.
-	 */
-	public void setContent(String content) {
+    /**
+     * @param content - the story content.
+     *                <p/>
+     *                This method sets to variables, it sets the unparsed Contents
+     *                to a variable and also sets the parsed out content to a
+     *                variable.
+     */
+    public void setContent(String content) {
 
-		setUnparsedContent(content);
-		
-		setContentNoVideo(content);
+        setUnparsedContent(content);
 
-		mContent = parseHTML(content);
-	}
+        setContentNoVideo(content);
 
-	public String getContentNoVideo() {
-		return mContentNoVideo;
-	}
+        mContent = parseHTML(content);
+    }
 
-	public void setContentNoVideo(String contentNoVideo) {
-		mContentNoVideo = contentNoVideo;
-	}
+    public String getContentNoVideo() {
+        return mContentNoVideo;
+    }
 
-	public String getUnparsedContent() {
-		return mUnparsedContent;
-	}
+    public void setContentNoVideo(String contentNoVideo) {
+        mContentNoVideo = contentNoVideo;
+    }
 
-	public void setUnparsedContent(String unparsedContent) {
-		mUnparsedContent = unparsedContent;
-	}
+    public String getUnparsedContent() {
+        return mUnparsedContent;
+    }
 
-	public String getDescription() {
-		return mDescription;
-	}
+    public void setUnparsedContent(String unparsedContent) {
+        mUnparsedContent = unparsedContent;
+    }
 
-	public void setDescription(String description) {
-		setUnParsedDescription(description);
-		mDescription = parseHTML(description);
-	}
+    public String getDescription() {
+        return mDescription;
+    }
 
-	public String getUnParsedDescription() {
-		return mUnParsedDescription;
-	}
+    public void setDescription(String description) {
+        setUnParsedDescription(description);
+        mDescription = parseHTML(description);
+    }
 
-	public void setUnParsedDescription(String unParsedDescription) {
-		mUnParsedDescription = unParsedDescription;
-	}
+    public String getUnParsedDescription() {
+        return mUnParsedDescription;
+    }
 
-	public String getDate() {
-		return mDate;
-	}
+    public void setUnParsedDescription(String unParsedDescription) {
+        mUnParsedDescription = unParsedDescription;
+    }
 
-	public void setDate(String date) {
-		mDate = date;
-	}
+    public String getDate() {
+        return mDate;
+    }
 
-	public String getPictureUrl() {
-		return mPictureUrl;
-	}
+    public void setDate(String date) {
+        mDate = date;
+    }
 
-	public void setPictureUrl(String pictureUrl) {
-		// get rid of the escape char's that are in the url for some reason
-		pictureUrl = pictureUrl.replaceAll("\\\\/", "/");
-		mPictureUrl = formatPictureURL(pictureUrl);
-	}
+    public String getPictureUrl() {
+        return mPictureUrl;
+    }
 
-	public String getAuthor() {
-		return mAuthor;
-	}
+    public void setPictureUrl(String pictureUrl) {
 
-	public void setAuthor(String author) {
-		mAuthor = author;
-	}
+        if (pictureUrl == null)
+            return;
+        // get rid of the escape char's that are in the url for some reason
+        pictureUrl = pictureUrl.replaceAll("\\\\/", "/");
+        mPictureUrl = formatPictureURL(pictureUrl);
+    }
 
-	public Drawable getImageDrawable() {
-		return mImageDrawable;
-	}
+    public String getAuthor() {
+        return mAuthor;
+    }
 
-	public void setImageDrawable(Drawable imageDrawable) {
-		mImageDrawable = imageDrawable;
-	}
+    public void setAuthor(String author) {
+        mAuthor = author;
+    }
 
-	private String parseHTML(String contents) {
-		return Html.fromHtml(contents, new ImageGetter() {
+    public Drawable getImageDrawable() {
+        return mImageDrawable;
+    }
 
-			@Override
-			public Drawable getDrawable(String source) {
-				Drawable d;
-				try {
-					d = Drawable.createFromStream(
-							new URL(mPictureUrl).openStream(), "src name");
-					d.setBounds(0, 0, d.getIntrinsicWidth(),
-							d.getIntrinsicHeight());
+    public void setImageDrawable(Drawable imageDrawable) {
+        mImageDrawable = imageDrawable;
+    }
 
-					setImageDrawable(d);
+    private String parseHTML(String contents) {
+        return Html.fromHtml(contents, new ImageGetter() {
 
-					return d;
-				} catch (MalformedURLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					return null;
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					return null;
-				}
-			}
-		}, null).toString();
-	}
+            @Override
+            public Drawable getDrawable(String source) {
+                Drawable d;
+                try {
+                    d = Drawable.createFromStream(
+                            new URL(mPictureUrl).openStream(), "src name");
+                    d.setBounds(0, 0, d.getIntrinsicWidth(),
+                            d.getIntrinsicHeight());
 
-	private String formatPictureURL(String pictureUrl) {
-		// get rid of the "["" at the start and the beginning of the URL.
-		if (pictureUrl.startsWith("[") && pictureUrl.endsWith("]"))
-			return pictureUrl.substring(2, pictureUrl.length() - 2);
-		else
-			return pictureUrl;
-	}
+                    setImageDrawable(d);
+
+                    return d;
+                } catch (MalformedURLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    return null;
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        }, null).toString();
+    }
+
+    private String formatPictureURL(String pictureUrl) {
+        // get rid of the "["" at the start and the beginning of the URL.
+        if (pictureUrl.startsWith("[") && pictureUrl.endsWith("]"))
+            return pictureUrl.substring(2, pictureUrl.length() - 2);
+        else
+            return pictureUrl;
+    }
 }
