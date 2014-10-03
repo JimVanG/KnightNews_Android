@@ -59,19 +59,12 @@ public class HomeActivity extends Activity {
             R.drawable.events_beach,
             R.drawable.events_splash};
 
-//
-//    SnackBar snackBar = null;
-//    SnackBar.Style style = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
-
-//        snackBar = new SnackBar(this);
-//        style = SnackBar.Style.INFO;
 
 
         ParseAnalytics.trackAppOpened(getIntent());
