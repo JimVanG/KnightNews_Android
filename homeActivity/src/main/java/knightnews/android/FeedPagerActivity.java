@@ -122,9 +122,9 @@ public class FeedPagerActivity extends ActionBarActivity {
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         RequestManager.getInstance(mContext).cancelRequestByTag(TAG);
         mContext = null;
+        super.onDestroy();
     }
 
     @Override

@@ -93,9 +93,9 @@ public class EventsActivity extends ActionBarActivity {
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         RequestManager.getInstance(this).cancelRequestByTag(TAG);
         mContext = null;
+        super.onDestroy();
     }
 
     @Override

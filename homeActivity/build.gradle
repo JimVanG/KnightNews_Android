@@ -12,13 +12,12 @@ android {
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion 19
-        versionCode 16
-        versionName '2.4.0'
+        versionCode 17
+        versionName '2.4.1'
     }
 
     signingConfigs {
         release {
-            //storeFile file("knight_news_keystore.keystore")
             storeFile file(userHome + keystorePath)
             storePassword ""
             keyAlias "knightnews"
@@ -66,13 +65,13 @@ gradle.taskGraph.whenReady { taskGraph ->
     // Only execute when we are trying to assemble a release build
     if (taskGraph.hasTask(':homeActivity:assembleRelease')) {
         //get the storePassword from the console
-        def keyStorePass = System.console().readPassword("\nPlease enter keystore password: ")
+        def keyStorePass = System.console().readPassword("\nPlease enter storePassword: ")
         // readPassword returns a char[] so we need to wrap it into a string, because that's
         // most likely what you need
         keyStorePass = new String(keyStorePass)
 
         //get the keyPassword from the console
-        def keyPass = System.console().readPassword("\nPlease enter the key password: ")
+        def keyPass = System.console().readPassword("\nPlease enter keyPassword: ")
 
         keyPass = new String(keyPass)
 
