@@ -23,6 +23,7 @@ public class UcfMapFragment extends SupportMapFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
+
         mGoogleMap = getMap();
 
         //16 (other good zoom)

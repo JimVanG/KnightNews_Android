@@ -15,10 +15,10 @@
     <!-- Focused states (such as when focused with a d-pad or mouse hover) -->
     <item android:state_focused="true" android:state_selected="false"
           android:state_pressed="false"
-          android:drawable="@drawable/abc_tab_indicator_ab_holo"/>
+          android:drawable="@drawable/abc_tab_indicator_material"/>
     <item android:state_focused="true" android:state_selected="true"
           android:state_pressed="false"
-          android:drawable="@drawable/abc_tab_indicator_ab_holo"/>
+          android:drawable="@drawable/abc_tab_indicator_material"/>
 
 
     <!-- STATES WHEN BUTTON IS PRESSED -->

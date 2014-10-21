@@ -19,6 +19,9 @@ public class SportsActivity extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getSupportActionBar();
+
+	    actionBar.setDisplayHomeAsUpEnabled(true);
+
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         ActionBar.Tab tab1 = actionBar.newTab()

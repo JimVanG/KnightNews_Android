@@ -39,6 +39,7 @@ public class SportsWebViewActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
         mUrl = getIntent().getStringExtra(KEY_URL);
         mOriginTab = getIntent().getIntExtra(SportsActivity.KEY_SELECTED_TAB, 0);

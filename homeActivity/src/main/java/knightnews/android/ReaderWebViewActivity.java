@@ -43,6 +43,7 @@ public class ReaderWebViewActivity extends Activity {
         mUrl = getIntent().getStringExtra(KEY_URL);
         mPos = getIntent().getIntExtra(FeedPagerActivity.EXTRA_POSITION, 0);
 
+
         setContentView(R.layout.activity_webview);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);

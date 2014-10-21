@@ -6,12 +6,12 @@ ext.userHome = System.getProperty("user.home")
 ext.keystorePath = '/Documents/KnightNewsReleases/knight_news_keystore.keystore'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '20.0.0'
+    compileSdkVersion 21
+    buildToolsVersion '21.0.1'
 
     defaultConfig {
         minSdkVersion 11
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 17
         versionName '2.4.1'
     }
@@ -29,6 +29,7 @@ android {
         debug {
             applicationIdSuffix ".d"
             versionNameSuffix "-debug"
+
         }
 
         release {
@@ -50,9 +51,9 @@ android {
 
 dependencies {
     compile project(':volley')
-    compile 'com.android.support:support-v4:20.0.0'
-    compile 'com.android.support:appcompat-v7:20.0.0'
-    compile 'com.google.android.gms:play-services:5.0.89'
+    compile 'com.android.support:support-v4:21.0.0'
+    compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.google.android.gms:play-services:6.1.11'
     compile files('libs/picasso-2.2.0.jar')
     compile files('libs/Parse-1.5.1.jar')
 }

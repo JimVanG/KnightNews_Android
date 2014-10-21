@@ -8,6 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends ActionBarActivity {
     private static final String TAG = "HomeActivity";
 
     public static final String ERROR_IMAGE = "error_image";

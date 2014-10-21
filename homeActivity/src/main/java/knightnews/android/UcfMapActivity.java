@@ -7,7 +7,8 @@ import android.support.v4.app.Fragment;
  */
 public class UcfMapActivity extends SingleFragmentActivity {
 
-    @Override
+
+	@Override
     protected Fragment createFragment() {
         return new UcfMapFragment();
     }

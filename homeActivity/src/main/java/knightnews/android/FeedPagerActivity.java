@@ -59,6 +59,7 @@ public class FeedPagerActivity extends ActionBarActivity {
 
         mContext = this;
 
+	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fetchNewsItems();
 
