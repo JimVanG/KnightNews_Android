@@ -11,6 +11,8 @@ public abstract class SingleFragmentActivity extends ActionBarActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		setContentView(R.layout.activity_fragment);
