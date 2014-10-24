@@ -116,8 +116,14 @@
                 android:value="com.sigmobile.ucf_news.SportsActivity"/>
         </activity>
         <activity
-            android:name="knightnews.android.FeedActivity"
-            android:label="@string/app_name"></activity>
+            android:name="knightnews.android.FeedListActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="knightnews.android.HomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sigmobile.ucf_news.HomeActivity"/>
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

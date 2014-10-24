@@ -4,6 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +26,7 @@ public class FeedListFragment extends Fragment {
 
 	private static final String TAG = "FeedListFragment";
 
-	private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
+	private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/?count=20";
 	private static final String TAG_POSTS = "posts";
 	private static final String TAG_URL = "url";
 	private static final String TAG_TITLE_PLAIN = "title_plain";
@@ -34,6 +37,9 @@ public class FeedListFragment extends Fragment {
 	private static final String TAG_NAME = "name";
 
 	private Context mContext;
+
+	private RecyclerView mRecyclerView;
+	private FeedListAdapter mListAdapter;
 
 	public FeedListFragment() {
 
@@ -55,6 +61,11 @@ public class FeedListFragment extends Fragment {
 
 		View v = inflater.inflate(R.layout.fragment_feed_list, container, false);
 
+		mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_stories);
+		mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+		mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+
 		return v;
 	}
 
@@ -63,6 +74,11 @@ public class FeedListFragment extends Fragment {
 		RequestManager.getInstance(mContext).cancelRequestByTag(TAG);
 		mContext = null;
 		super.onDestroy();
+	}
+
+	private void setUpAdapter() {
+		mListAdapter = new FeedListAdapter(StoryListManager.getInstance(mContext).getStoryList());
+		mRecyclerView.setAdapter(mListAdapter);
 	}
 
 	private void fetchNewsItems() {
@@ -75,6 +91,7 @@ public class FeedListFragment extends Fragment {
 
 
 						parseJSON(response);
+						setUpAdapter();
 
 					}
 				}, new Response.ErrorListener() {

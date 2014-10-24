@@ -92,7 +92,7 @@ public class HomeActivity extends ActionBarActivity {
 				//News
 
 				Intent i = new Intent(mContext,
-						FeedPagerActivity.class);
+						FeedListActivity.class);
 				startActivity(i);
 			}
 		});
