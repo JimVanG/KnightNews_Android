@@ -46,7 +46,6 @@ public class FeedListFragment extends Fragment {
 	private Context mContext;
 
 	private RecyclerView mRecyclerView;
-	private FeedListAdapter mListAdapter;
 
 	public FeedListFragment() {
 
@@ -57,6 +56,8 @@ public class FeedListFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 
 		mContext = getActivity();
+
+		setRetainInstance(true);
 
 		fetchNewsItems();
 
@@ -84,9 +85,8 @@ public class FeedListFragment extends Fragment {
 	}
 
 	private void setUpAdapter() {
-		mListAdapter = new FeedListAdapter(
-				StoryListManager.getInstance(mContext).getStoryList(), mContext);
-		mRecyclerView.setAdapter(mListAdapter);
+		mRecyclerView.setAdapter(new FeedListAdapter(
+				StoryListManager.getInstance(mContext).getStoryList(), mContext));
 	}
 
 	private void fetchNewsItems() {

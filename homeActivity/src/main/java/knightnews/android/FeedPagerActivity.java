@@ -27,287 +27,290 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class FeedPagerActivity extends ActionBarActivity {
-    private static final String TAG = "FeedPagerActivity";
+	private static final String TAG = "FeedPagerActivity";
 
-    public static final String EXTRA_POSITION = "com.sigmobile.ucf_news.FeedPagerActivity" +
-            ".EXTRA_POSITION";
-    private static final String STATE_POSITION = "com.sigmobile.ucf_news.STATE_POSITION";
+	public static final String EXTRA_POSITION = "com.sigmobile.ucf_news.FeedPagerActivity" +
+			".EXTRA_POSITION";
+	private static final String STATE_POSITION = "com.sigmobile.ucf_news.STATE_POSITION";
 
-    private static final String PREFS_NAME = "KnightNewsPrefsFile";
+	private static final String PREFS_NAME = "KnightNewsPrefsFile";
 
 
-    private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
-    private static final String TAG_POSTS = "posts";
-    private static final String TAG_URL = "url";
-    private static final String TAG_TITLE_PLAIN = "title_plain";
-    private static final String TAG_EXCERPT = "excerpt";
-    private static final String TAG_CONTENT = "content";
-    private static final String TAG_IMAGE = "image";
-    private static final String TAG_AUTHOR = "author";
-    private static final String TAG_NAME = "name";
+	private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
+	private static final String TAG_POSTS = "posts";
+	private static final String TAG_URL = "url";
+	private static final String TAG_TITLE_PLAIN = "title_plain";
+	private static final String TAG_EXCERPT = "excerpt";
+	private static final String TAG_CONTENT = "content";
+	private static final String TAG_IMAGE = "image";
+	private static final String TAG_AUTHOR = "author";
+	private static final String TAG_NAME = "name";
 
-    private static final float MIN_DISTANCE = 120;
-    private float x1 = 0, x2 = 0;
+	private static final float MIN_DISTANCE = 120;
+	private float x1 = 0, x2 = 0;
 
-    private ViewPager mPager;
-    private Context mContext;
+	private ViewPager mPager;
+	private Context mContext;
 
-    @TargetApi(11)
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	@TargetApi(11)
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        mContext = this;
+		mContext = this;
 
-	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        fetchNewsItems();
+		fetchNewsItems();
 
-        mPager = new ViewPager(this);
-        mPager.setId(R.id.viewPager);
+		mPager = new ViewPager(this);
+		mPager.setId(R.id.viewPager);
 
-        if (savedInstanceState != null) {
-            mPager.setCurrentItem(savedInstanceState.getInt(STATE_POSITION));
-        }
+		if (savedInstanceState != null) {
+			mPager.setCurrentItem(savedInstanceState.getInt(STATE_POSITION));
+		}
 
-        int item = getIntent().getIntExtra(EXTRA_POSITION, 0);
+		int item = getIntent().getIntExtra(EXTRA_POSITION, 0);
 
-        mPager.setCurrentItem(item);
+		mPager.setCurrentItem(item);
 
-        mPager.setOnTouchListener(new OnTouchListener() {
+		mPager.setOnTouchListener(new OnTouchListener() {
 
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        x1 = event.getX();
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        x2 = event.getX();
-                        float deltaX = x2 - x1;
-                        if (Math.abs(deltaX) > MIN_DISTANCE) {
-                            // Log.d(TAG, "*SWIPE*");
-                        } else {
-                            // Log.d(TAG, "*TAP*");
-                            v.playSoundEffect(SoundEffectConstants.CLICK);
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
+					case MotionEvent.ACTION_DOWN:
+						x1 = event.getX();
+						break;
+					case MotionEvent.ACTION_UP:
+						x2 = event.getX();
+						float deltaX = x2 - x1;
+						if (Math.abs(deltaX) > MIN_DISTANCE) {
+							// Log.d(TAG, "*SWIPE*");
+						} else {
+							// Log.d(TAG, "*TAP*");
+							v.playSoundEffect(SoundEffectConstants.CLICK);
 
-                            Intent i = new Intent(getApplicationContext(),
-                                    ReaderActivity.class);
-                            i.putExtra(ReaderFragment.KEY_STORY, StoryListManager
-                                    .getInstance(getApplicationContext())
-                                    .getStoryList().get(mPager.getCurrentItem()));
-                            i.putExtra(EXTRA_POSITION, mPager.getCurrentItem());
+							Intent i = new Intent(getApplicationContext(),
+									ReaderActivity.class);
+							i.putExtra(ReaderFragment.KEY_STORY, StoryListManager
+									.getInstance(getApplicationContext())
+									.getStoryList().get(mPager.getCurrentItem()));
+							i.putExtra(EXTRA_POSITION, mPager.getCurrentItem());
 
-                            startActivity(i);
-                        }
-                        break;
-                }
-                return false;
-            }
-        });
+							startActivity(i);
+						}
+						break;
+				}
+				return false;
+			}
+		});
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            mPager.setPageTransformer(true, new DepthPageTransformer());
-        else
-            mPager.setPageMargin(10);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			mPager.setPageTransformer(true, new DepthPageTransformer());
+		} else {
+			mPager.setPageMargin(10);
+		}
 
-        setContentView(mPager);
-        checkFirstTime();
-    }
+		setContentView(mPager);
+		checkFirstTime();
+	}
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+	@Override
+	protected void onResume() {
+		super.onResume();
 
-    }
+	}
 
-    @Override
-    public void onDestroy() {
-        RequestManager.getInstance(mContext).cancelRequestByTag(TAG);
-        mContext = null;
-        super.onDestroy();
-    }
+	@Override
+	public void onDestroy() {
+		RequestManager.getInstance(mContext).cancelRequestByTag(TAG);
+		mContext = null;
+		super.onDestroy();
+	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
 
-                Intent upIntent = NavUtils.getParentActivityIntent(this);
-                upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                NavUtils.navigateUpTo(this, upIntent);
+				Intent upIntent = NavUtils.getParentActivityIntent(this);
+				upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent
+						.FLAG_ACTIVITY_SINGLE_TOP);
+				NavUtils.navigateUpTo(this, upIntent);
 
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+				return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt(STATE_POSITION, mPager.getCurrentItem());
-        super.onSaveInstanceState(outState);
-    }
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		outState.putInt(STATE_POSITION, mPager.getCurrentItem());
+		super.onSaveInstanceState(outState);
+	}
 
-    private void setUpAdapter() {
+	private void setUpAdapter() {
 
-        if (StoryListManager.getInstance(mContext).getStoryList() != null) {
-            mPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
-        } else {
-            mPager.setAdapter(null);
-        }
-    }
+		if (StoryListManager.getInstance(mContext).getStoryList() != null) {
+			mPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
+		} else {
+			mPager.setAdapter(null);
+		}
+	}
 
-    private void fetchNewsItems() {
-        JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
+	private void fetchNewsItems() {
+		JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
+				new Response.Listener<JSONObject>() {
+					@Override
+					public void onResponse(JSONObject response) {
 //                            VolleyLog.v("Response:%n %s", response.toString(4));
 //                            Log.i(TAG, "Response: " + response.toString());
 
 
-                        parseJSON(response);
-                        setUpAdapter();
+						parseJSON(response);
+						setUpAdapter();
 
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //VolleyLog.e("Error: ", error.getMessage());
-            }
-        }
-        );
-        RequestManager.getInstance(mContext).addToRequestQueue(mRequest, TAG);
-    }
+					}
+				}, new Response.ErrorListener() {
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				//VolleyLog.e("Error: ", error.getMessage());
+			}
+		}
+		);
+		RequestManager.getInstance(mContext).addToRequestQueue(mRequest, TAG);
+	}
 
-    private void checkFirstTime() {
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+	private void checkFirstTime() {
+		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-        if (settings.getBoolean("my_first_time", true)) {
+		if (settings.getBoolean("my_first_time", true)) {
 
-            FirstTimeDialog dia = FirstTimeDialog.newInstance();
-            dia.show(getSupportFragmentManager(), "FirstTimeDialog");
+			FirstTimeDialog dia = FirstTimeDialog.newInstance();
+			dia.show(getSupportFragmentManager(), "FirstTimeDialog");
 
-            // record the fact that the app has been started at least once
-            settings.edit().putBoolean("my_first_time", false).apply();
-        }
-    }
+			// record the fact that the app has been started at least once
+			settings.edit().putBoolean("my_first_time", false).apply();
+		}
+	}
 
-    private void parseJSON(JSONObject response) {
-        if (response == null)
-            return;
+	private void parseJSON(JSONObject response) {
+		if (response == null) {
+			return;
+		}
 
-        try {
-            JSONArray posts = response.getJSONArray(TAG_POSTS);
+		try {
+			JSONArray posts = response.getJSONArray(TAG_POSTS);
 
-            //check if to make sure we don't add duplicate stories by comparing the titles
-            //of the first stories.
-            if (StoryListManager.getInstance(mContext).sizeOfStoryList() > 0) {
-                StoryItem testStoryItem = new StoryItem();
-                JSONObject testObj = posts.getJSONObject(0);
-                testStoryItem.setTitle(testObj.getString(TAG_TITLE_PLAIN));
-                String testTitle = testStoryItem.getTitle();
+			//check if to make sure we don't add duplicate stories by comparing the titles
+			//of the first stories.
+			if (StoryListManager.getInstance(mContext).sizeOfStoryList() > 0) {
+				StoryItem testStoryItem = new StoryItem();
+				JSONObject testObj = posts.getJSONObject(0);
+				testStoryItem.setTitle(testObj.getString(TAG_TITLE_PLAIN));
+				String testTitle = testStoryItem.getTitle();
 
-                if (testTitle.equals(StoryListManager.getInstance(mContext).getStoryItemAt(0)
-                        .getTitle())) {
-                    //return because the stories are the same
-                    return;
-                } else {
-                    //If we have a new story just get rid of the old ones
-                    //so we don't create duplicates when adding the new story.
-                    StoryListManager.getInstance(mContext).removeAllStories();
-                }
-            }
+				if (testTitle.equals(StoryListManager.getInstance(mContext).getStoryItemAt(0)
+				                                     .getTitle())) {
+					//return because the stories are the same
+					return;
+				} else {
+					//If we have a new story just get rid of the old ones
+					//so we don't create duplicates when adding the new story.
+					StoryListManager.getInstance(mContext).removeAllStories();
+				}
+			}
 
-            for (int i = 0; i < posts.length(); i++) {
-                JSONObject p = posts.getJSONObject(i);
+			for (int i = 0; i < posts.length(); i++) {
+				JSONObject p = posts.getJSONObject(i);
 
-                JSONObject customFields = p.getJSONObject("custom_fields");
-                String img = customFields.optString(TAG_IMAGE, HomeActivity.ERROR_IMAGE);
-
-
-                String title = p.getString(TAG_TITLE_PLAIN);
-                String url = p.getString(TAG_URL);
-                String content = p.getString(TAG_CONTENT);
-                String description = p.getString(TAG_EXCERPT);
+				JSONObject customFields = p.getJSONObject("custom_fields");
+				String img = customFields.optString(TAG_IMAGE, HomeActivity.ERROR_IMAGE);
 
 
-                JSONObject author = p.getJSONObject(TAG_AUTHOR);
-                String name = author.getString(TAG_NAME);
+				String title = p.getString(TAG_TITLE_PLAIN);
+				String url = p.getString(TAG_URL);
+				String content = p.getString(TAG_CONTENT);
+				String description = p.getString(TAG_EXCERPT);
 
-                StoryItem item = new StoryItem();
-                item.setTitle(title);
-                item.setContent(content);
-                item.setDescription(description);
-                item.setUrl(url);
-                item.setPictureUrl(img);
-                item.setAuthor(name);
 
-                StoryListManager.getInstance(mContext).addStory(item);
-            }
+				JSONObject author = p.getJSONObject(TAG_AUTHOR);
+				String name = author.getString(TAG_NAME);
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
+				StoryItem item = new StoryItem();
+				item.setTitle(title);
+				item.setContent(content);
+				item.setDescription(description);
+				item.setUrl(url);
+				item.setPictureUrl(img);
+				item.setAuthor(name);
 
-    private class PagerAdapter extends FragmentStatePagerAdapter {
+				StoryListManager.getInstance(mContext).addStory(item);
+			}
 
-        public PagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
 
-        @Override
-        public Fragment getItem(int pos) {
-            StoryItem abridgedStory = StoryListManager
-                    .getInstance(getApplicationContext()).getStoryItemAt(pos);
+	private class PagerAdapter extends FragmentStatePagerAdapter {
 
-            return AbridgedStoryFragment.newInstance(abridgedStory);
-        }
+		public PagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
 
-        @Override
-        public int getCount() {
-            return StoryListManager.getInstance(mContext)
-                    .sizeOfStoryList();
-        }
-    }
+		@Override
+		public Fragment getItem(int pos) {
+			StoryItem abridgedStory = StoryListManager
+					.getInstance(getApplicationContext()).getStoryItemAt(pos);
 
-    private class DepthPageTransformer implements ViewPager.PageTransformer {
-        private static final float MIN_SCALE = 0.75f;
+			return AbridgedStoryFragment.newInstance(abridgedStory);
+		}
 
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-        public void transformPage(View view, float position) {
-            int pageWidth = view.getWidth();
+		@Override
+		public int getCount() {
+			return StoryListManager.getInstance(mContext)
+			                       .sizeOfStoryList();
+		}
+	}
 
-            if (position < -1) { // [-Infinity,-1)
-                // This page is way off-screen to the left.
-                view.setAlpha(0);
+	private class DepthPageTransformer implements ViewPager.PageTransformer {
+		private static final float MIN_SCALE = 0.75f;
 
-            } else if (position <= 0) { // [-1,0]
-                // Use the default slide transition when moving to the left page
-                view.setAlpha(1);
-                view.setTranslationX(0);
-                view.setScaleX(1);
-                view.setScaleY(1);
+		@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+		public void transformPage(View view, float position) {
+			int pageWidth = view.getWidth();
 
-            } else if (position <= 1) { // (0,1]
-                // Fade the page out.
-                view.setAlpha(1 - position);
+			if (position < -1) { // [-Infinity,-1)
+				// This page is way off-screen to the left.
+				view.setAlpha(0);
 
-                // Counteract the default slide transition
-                view.setTranslationX(pageWidth * -position);
+			} else if (position <= 0) { // [-1,0]
+				// Use the default slide transition when moving to the left page
+				view.setAlpha(1);
+				view.setTranslationX(0);
+				view.setScaleX(1);
+				view.setScaleY(1);
 
-                // Scale the page down (between MIN_SCALE and 1)
-                float scaleFactor = MIN_SCALE + (1 - MIN_SCALE)
-                        * (1 - Math.abs(position));
-                view.setScaleX(scaleFactor);
-                view.setScaleY(scaleFactor);
+			} else if (position <= 1) { // (0,1]
+				// Fade the page out.
+				view.setAlpha(1 - position);
 
-            } else { // (1,+Infinity]
-                // This page is way off-screen to the right.
-                view.setAlpha(0);
-            }
-        }
-    }
+				// Counteract the default slide transition
+				view.setTranslationX(pageWidth * -position);
+
+				// Scale the page down (between MIN_SCALE and 1)
+				float scaleFactor = MIN_SCALE + (1 - MIN_SCALE)
+						* (1 - Math.abs(position));
+				view.setScaleX(scaleFactor);
+				view.setScaleY(scaleFactor);
+
+			} else { // (1,+Infinity]
+				// This page is way off-screen to the right.
+				view.setAlpha(0);
+			}
+		}
+	}
 
 }
