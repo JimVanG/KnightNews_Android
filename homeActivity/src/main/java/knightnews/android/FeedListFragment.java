@@ -1,23 +1,30 @@
 package knightnews.android;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * Created by James Van Gaasbeck on 10/23/14.
@@ -77,7 +84,8 @@ public class FeedListFragment extends Fragment {
 	}
 
 	private void setUpAdapter() {
-		mListAdapter = new FeedListAdapter(StoryListManager.getInstance(mContext).getStoryList());
+		mListAdapter = new FeedListAdapter(
+				StoryListManager.getInstance(mContext).getStoryList(), mContext);
 		mRecyclerView.setAdapter(mListAdapter);
 	}
 
@@ -162,4 +170,66 @@ public class FeedListFragment extends Fragment {
 			e.printStackTrace();
 		}
 	}
+
+	private class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.ViewHolder> {
+
+		ArrayList<StoryItem> storyItemArrayList;
+		Context context;
+		ViewHolder holder;
+
+		public FeedListAdapter(ArrayList<StoryItem> storyItemArrayList, Context context) {
+			this.storyItemArrayList = storyItemArrayList;
+			this.context = context;
+		}
+
+		@Override
+		public FeedListAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+			View v = LayoutInflater.from(viewGroup.getContext())
+			                       .inflate(R.layout.feed_list_cardview, viewGroup, false);
+
+			holder = new ViewHolder(v);
+
+			return holder;
+		}
+
+		@Override
+		public void onBindViewHolder(FeedListAdapter.ViewHolder viewHolder, int i) {
+			StoryItem storyItem = this.storyItemArrayList.get(i);
+			viewHolder.titleTextView.setText(storyItem.getTitle());
+			Picasso.with(context).load(storyItem.getPictureUrl()).fit()
+			       .error(R.drawable
+					       .news_error)
+			       .into(viewHolder.imageView);
+
+			final int pos = i;
+			viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent i = new Intent(mContext,
+							ReaderActivity.class);
+					i.putExtra(ReaderFragment.KEY_STORY, storyItemArrayList.get(pos));
+					startActivity(i);
+				}
+			});
+		}
+
+		@Override
+		public int getItemCount() {
+			return this.storyItemArrayList.size();
+		}
+
+		public class ViewHolder extends RecyclerView.ViewHolder {
+			public TextView titleTextView;
+			public ImageView imageView;
+			public CardView cardView;
+
+			public ViewHolder(View itemView) {
+				super(itemView);
+				titleTextView = (TextView) itemView.findViewById(R.id.story_title);
+				imageView = (ImageView) itemView.findViewById(R.id.story_image);
+				cardView = (CardView) itemView.findViewById(R.id.card_view);
+			}
+		}
+	}
+
 }
