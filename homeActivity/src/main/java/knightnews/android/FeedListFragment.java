@@ -9,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -195,11 +196,19 @@ public class FeedListFragment extends Fragment {
 		@Override
 		public void onBindViewHolder(FeedListAdapter.ViewHolder viewHolder, int i) {
 			StoryItem storyItem = this.storyItemArrayList.get(i);
-			viewHolder.titleTextView.setText(storyItem.getTitle());
+
 			Picasso.with(context).load(storyItem.getPictureUrl()).fit()
 			       .error(R.drawable
 					       .news_error)
 			       .into(viewHolder.imageView);
+
+			viewHolder.titleTextView.setText(storyItem.getTitle());
+
+			viewHolder.authorTextView.setText(storyItem.getAuthor());
+
+			TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+			viewHolder.excerptTextView.setEllipsize(truncateAt);
+			viewHolder.excerptTextView.setText(storyItem.getDescription());
 
 			final int pos = i;
 			viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -219,7 +228,7 @@ public class FeedListFragment extends Fragment {
 		}
 
 		public class ViewHolder extends RecyclerView.ViewHolder {
-			public TextView titleTextView;
+			public TextView titleTextView, authorTextView, excerptTextView;
 			public ImageView imageView;
 			public CardView cardView;
 
@@ -228,6 +237,8 @@ public class FeedListFragment extends Fragment {
 				titleTextView = (TextView) itemView.findViewById(R.id.story_title);
 				imageView = (ImageView) itemView.findViewById(R.id.story_image);
 				cardView = (CardView) itemView.findViewById(R.id.card_view);
+				authorTextView = (TextView) itemView.findViewById(R.id.story_author);
+				excerptTextView = (TextView) itemView.findViewById(R.id.story_excerpt);
 			}
 		}
 	}
