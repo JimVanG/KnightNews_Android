@@ -40,7 +40,8 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    />
 
                 <TextView
                     android:id="@+id/story_author"
