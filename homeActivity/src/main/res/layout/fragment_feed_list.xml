@@ -5,11 +5,32 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/progressBar_layout"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar1"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            />
+    </LinearLayout>
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_stories"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+
 
 </LinearLayout>

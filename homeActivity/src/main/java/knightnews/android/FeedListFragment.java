@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Response;
@@ -47,6 +49,7 @@ public class FeedListFragment extends Fragment {
 	private Context mContext;
 
 	private RecyclerView mRecyclerView;
+	private LinearLayout mProgressBar;
 
 	public FeedListFragment() {
 
@@ -70,10 +73,12 @@ public class FeedListFragment extends Fragment {
 
 		View v = inflater.inflate(R.layout.fragment_feed_list, container, false);
 
+		mProgressBar = (LinearLayout) v.findViewById(R.id.progressBar_layout);
+		v.setVisibility(View.VISIBLE);
+
 		mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_stories);
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
 		mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
 
 		return v;
 	}
@@ -88,6 +93,8 @@ public class FeedListFragment extends Fragment {
 	private void setUpAdapter() {
 		mRecyclerView.setAdapter(new FeedListAdapter(
 				StoryListManager.getInstance(mContext).getStoryList(), mContext));
+
+		mProgressBar.setVisibility(View.GONE);
 	}
 
 	private void fetchNewsItems() {
