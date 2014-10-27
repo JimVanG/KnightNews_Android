@@ -32,7 +32,8 @@ public class HomeActivity extends ActionBarActivity {
 
 	public static final String ERROR_IMAGE = "error_image";
 
-	private static final String URL_JSON = "http://knightnews.com/api/get_recent_posts/";
+	private static final String URL_JSON_HOME_ACTIVITY =
+			"http://knightnews.com/api/get_recent_posts/?count=5";
 	private static final String STATE_NEWS_POSITION = "com.sigmobile.ucf_news.HomeActivity" +
 			".STATE_NEWS_POSITION";
 	private static final String STATE_NEWS_URL_LIST = "com.sigmobile.ucf_news.HomeActivity" +
@@ -232,7 +233,7 @@ public class HomeActivity extends ActionBarActivity {
 	}
 
 	private void fetchNewsItems() {
-		JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON, null,
+		JsonObjectRequest mRequest = new JsonObjectRequest(URL_JSON_HOME_ACTIVITY, null,
 				new Response.Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {//
