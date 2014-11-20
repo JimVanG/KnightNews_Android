@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by jjvg on 6/2/14.
+ * Created by James Van Gaasbeck on 6/2/14.
  */
 public class FirstTimeDialog extends DialogFragment {
 

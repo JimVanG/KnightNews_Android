@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +21,7 @@ import android.widget.ProgressBar;
 /**
  * Created by James Van Gaasbeck on 8/24/14.
  */
-public class SportsWebViewActivity extends Activity {
+public class SportsWebViewActivity extends ActionBarActivity {
     private static final String TAG = "SportsWebViewActivity";
 
     public static final String KEY_URL = "com.sigmobile.ucf_news.com.ReaderWebViewActivity.KEY_URL";
@@ -39,6 +40,7 @@ public class SportsWebViewActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mStory = (StoryItem) getIntent().getSerializableExtra(KEY_STORY);
         mUrl = getIntent().getStringExtra(KEY_URL);
@@ -123,19 +125,6 @@ public class SportsWebViewActivity extends Activity {
 
         getMenuInflater().inflate(R.menu.feed, menu);
 
-        MenuItem shareItem = menu.findItem(R.id.action_share);
-        mShareActionProvider = (ShareActionProvider) MenuItemCompat
-                .getActionProvider(shareItem);
-
-        if (mShareActionProvider != null) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_SUBJECT, mStory.getTitle());
-            intent.putExtra(Intent.EXTRA_TEXT, mStory.getDescription() + "\n"
-                    + mStory.getUrl() + "\n\n" + "Sent via KnightNews");
-
-            mShareActionProvider.setShareIntent(intent);
-        }
 
         return super.onCreateOptionsMenu(menu);
     }

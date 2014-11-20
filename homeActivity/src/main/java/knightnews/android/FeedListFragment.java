@@ -76,7 +76,10 @@ public class FeedListFragment extends Fragment {
 		v.setVisibility(View.VISIBLE);
 
 		mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_stories);
-		mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+		mRecyclerView.setHasFixedSize(true);
+		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+		linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+		mRecyclerView.setLayoutManager(linearLayoutManager);
 		mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 		return v;
@@ -215,6 +218,7 @@ public class FeedListFragment extends Fragment {
 			TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
 			viewHolder.excerptTextView.setEllipsize(truncateAt);
 			viewHolder.excerptTextView.setText(storyItem.getDescription());
+
 
 			final int pos = i;
 			viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
