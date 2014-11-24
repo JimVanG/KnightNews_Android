@@ -136,8 +136,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.816594" vertical-offset="0" max-vertical-offset="1380">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6853147" vertical-offset="591" max-vertical-offset="1380">
+              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -530,9 +530,9 @@
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:appcompat-v7:21.0.0" />
+                <option name="description" value="Prepare com.android.support:appcompat-v7:21.0.2" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/homeActivity" />
-                <option name="name" value="prepareComAndroidSupportAppcompatV72100Library" />
+                <option name="name" value="prepareComAndroidSupportAppcompatV72102Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:cardview-v7:21.0.0" />
@@ -545,9 +545,9 @@
                 <option name="name" value="prepareComAndroidSupportRecyclerviewV72100Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:support-v4:21.0.0" />
+                <option name="description" value="Prepare com.android.support:support-v4:21.0.2" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/homeActivity" />
-                <option name="name" value="prepareComAndroidSupportSupportV42100Library" />
+                <option name="name" value="prepareComAndroidSupportSupportV42102Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.google.android.gms:play-services:6.1.11" />
@@ -1059,7 +1059,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5652222199000" />
+        <entry key="$PROJECT_DIR$" value="5652222702000" />
         <entry key="$PROJECT_DIR$/../WordPress-Android-App-Challenge_2.6" value="1391323574000" />
       </map>
     </option>
@@ -1214,16 +1214,16 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/5310da9f90e843883309e9e0bf5950faa79882a0/commons-codec-1.4-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar" />
-                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.0/support-v4-21.0.0-sources.jar" />
-                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.0/support-v4-21.0.0.aar" />
-                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/appcompat-v7/21.0.0/appcompat-v7-21.0.0.aar" />
+                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.2/support-v4-21.0.2-sources.jar" />
+                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.2/support-v4-21.0.2.aar" />
+                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/appcompat-v7/21.0.2/appcompat-v7-21.0.2.aar" />
                             <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/cardview-v7/21.0.0/cardview-v7-21.0.0-sources.jar" />
                             <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/cardview-v7/21.0.0/cardview-v7-21.0.0.aar" />
                             <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/21.0.0/recyclerview-v7-21.0.0-sources.jar" />
                             <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/21.0.0/recyclerview-v7-21.0.0.aar" />
                             <option value="$USER_HOME$/Android_SDK/sdk/extras/google/m2repository/com/google/android/gms/play-services/6.1.11/play-services-6.1.11.aar" />
-                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0-sources.jar" />
-                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar" />
+                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2-sources.jar" />
+                            <option value="$USER_HOME$/Android_SDK/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar" />
                             <option value="$MODULE_DIR$/libs/picasso-2.2.0.jar" />
                             <option value="$MODULE_DIR$/libs/Parse-1.5.1.jar" />
                           </list>
@@ -2276,7 +2276,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21864952" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21864952" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23472668" sideWeight="0.56058156" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25884244" sideWeight="0.4749596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1987076" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -2284,7 +2284,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26003212" sideWeight="0.4749596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18820679" sideWeight="0.5032538" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25723472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2652733" sideWeight="0.5250404" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2652733" sideWeight="0.5250404" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2767,8 +2767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homeActivity/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.816594" vertical-offset="0" max-vertical-offset="1380">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6853147" vertical-offset="591" max-vertical-offset="1380">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding />
         </state>
       </provider>
