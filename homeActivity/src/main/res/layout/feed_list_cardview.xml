@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
-                    android:textSize="17.5sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     android:maxLines="5"
                     android:ellipsize="end"/>
@@ -42,7 +42,7 @@
                     android:id="@+id/story_author"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
+                    android:layout_margin="1dp"
                     android:textSize="12sp"
                     android:textStyle="italic"/>
 
@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
-                    android:textSize="13sp"
+                    android:textSize="13.25sp"
                     android:maxLines="4"
                     />
             </LinearLayout>
