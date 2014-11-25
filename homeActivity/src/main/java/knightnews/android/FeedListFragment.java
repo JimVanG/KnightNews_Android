@@ -2,6 +2,7 @@ package knightnews.android;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -210,6 +211,13 @@ public class FeedListFragment extends Fragment {
 			       .error(R.drawable
 					       .news_error)
 			       .into(viewHolder.imageView);
+
+//			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+//				LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+//						ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//				params.setMargins(5,5,5,5);
+//				viewHolder.cardView.setLayoutParams(params);
+//			}
 
 			viewHolder.titleTextView.setText(storyItem.getTitle());
 

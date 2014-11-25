@@ -4,8 +4,9 @@
         android:id="@+id/card_view"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
         card_view:cardCornerRadius="4dp"
+        card_view:cardUseCompatPadding="true"
         >
 
         <LinearLayout
