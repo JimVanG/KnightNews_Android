@@ -1,11 +1,10 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.13.+'
+        classpath 'com.android.tools.build:gradle:1.0.0-rc1'
     }
 }
 
@@ -13,8 +12,15 @@ allprojects {
     repositories {
         mavenCentral()
     }
+
+    /* Java for all projects */
+    /** http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.compile.CompileOptions.html **/
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << '-Xlint:deprecation' << '-Xlint:unchecked'
+        options.deprecation = true
+        options.encoding = 'UTF-8'
+//        options.fork = true
+//        options.incremental = true
+    }
 }
 
-task wrapper(type: Wrapper) {
-        gradleVersion = '2.1'
-}
