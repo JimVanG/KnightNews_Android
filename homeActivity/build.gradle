@@ -31,12 +31,15 @@ android {
         debug {
             applicationIdSuffix ".d"
             versionNameSuffix "-debug"
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         release {
-            minifyEnabled false
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.txt'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
     }
@@ -55,8 +58,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:21.0.2'
     compile 'com.google.android.gms:play-services:6.1.71'
     compile 'com.mcxiaoke.volley:library:1.0.9'
-    compile 'com.github.amlcurran.showcaseview:library:5.0.0'
-    compile 'com.squareup.picasso:picasso:2.4.0'   
+    compile 'com.squareup.picasso:picasso:2.4.0'
     compile files('libs/Parse-1.5.1.jar')
 }
 

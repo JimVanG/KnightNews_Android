@@ -61,7 +61,7 @@
             android:parentActivityName="knightnews.android.FeedListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.FeedPagerActivity"/>
+                android:value="knightnews.android.FeedPagerActivity"/>
         </activity>
         <activity
             android:name="knightnews.android.FeedPagerActivity"
@@ -69,7 +69,7 @@
             android:parentActivityName="knightnews.android.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.HomeActivity"/>
+                android:value="knightnews.android.HomeActivity"/>
         </activity>
         <activity
             android:name="knightnews.android.EventsActivity"
@@ -77,7 +77,7 @@
             android:parentActivityName="knightnews.android.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.HomeActivity"/>
+                android:value="knightnews.android.HomeActivity"/>
         </activity>
         <activity
             android:name="knightnews.android.SportsActivity"
@@ -86,7 +86,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.HomeActivity"/>
+                android:value="knightnews.android.HomeActivity"/>
         </activity>
         <activity
             android:name="knightnews.android.UcfMapActivity"
@@ -95,7 +95,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.HomeActivity"/>
+                android:value="knightnews.android.HomeActivity"/>
         </activity>
         <activity
             android:name=".ReaderWebViewActivity"
@@ -104,7 +104,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.ReaderActivity"/>
+                android:value="knightnews.android.ReaderActivity"/>
         </activity>
         <activity
             android:name=".SportsWebViewActivity"
@@ -113,7 +113,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.SportsActivity"/>
+                android:value="knightnews.android.SportsActivity"/>
         </activity>
         <activity
             android:name="knightnews.android.FeedListActivity"
@@ -122,7 +122,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sigmobile.ucf_news.HomeActivity"/>
+                android:value="knightnews.android.HomeActivity"/>
         </activity>
 
         <meta-data
