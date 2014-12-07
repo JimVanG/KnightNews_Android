@@ -14,8 +14,8 @@ android {
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion 21
-        versionCode 19
-        versionName '3.0.1'
+        versionCode 20
+        versionName '3.0.2'
     }
 
     signingConfigs {
@@ -77,7 +77,6 @@ gradle.taskGraph.whenReady { taskGraph ->
 
         //get the keyPassword from the console
         def keyPass = System.console().readPassword("\nPlease enter keyPassword: ")
-
         keyPass = new String(keyPass)
 
         //set the storePassword and the keyPassword
