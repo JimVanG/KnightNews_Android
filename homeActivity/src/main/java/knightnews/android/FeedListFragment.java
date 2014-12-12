@@ -44,6 +44,7 @@ public class FeedListFragment extends Fragment {
 	private static final String TAG_IMAGE = "image";
 	private static final String TAG_AUTHOR = "author";
 	private static final String TAG_NAME = "name";
+	private static final String TAG_DATE = "date";
 
 	private Context mContext;
 
@@ -160,6 +161,7 @@ public class FeedListFragment extends Fragment {
 				String url = p.getString(TAG_URL);
 				String content = p.getString(TAG_CONTENT);
 				String description = p.getString(TAG_EXCERPT);
+				String date = p.getString(TAG_DATE);
 
 
 				JSONObject author = p.getJSONObject(TAG_AUTHOR);
@@ -172,6 +174,7 @@ public class FeedListFragment extends Fragment {
 				item.setUrl(url);
 				item.setPictureUrl(img);
 				item.setAuthor(name);
+				item.setDate(date);
 
 				StoryListManager.getInstance(mContext).addStory(item);
 			}

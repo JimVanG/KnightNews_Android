@@ -18,13 +18,16 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class ReaderFragment extends Fragment {
 	private static final String TAG = "ReaderFragment";
 
 	public static final String KEY_STORY = "com.sigmobile.ucf_news.KEY_STORY";
-	private TextView mTitleTextView, mDateTextView;
+	private ImageView mStoryImageTextView;
 	private WebView mContentWebView;
 	private StoryItem mStory;
 	private ShareActionProvider mShareActionProvider;
@@ -124,15 +127,13 @@ public class ReaderFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater,
 	                         final ViewGroup container, Bundle savedInstanceState) {
 
-		View v = inflater.inflate(R.layout.fragment_reader, container, false);
+		View v = inflater.inflate(R.layout.fragment_reader_parallax, container, false);
 
-		mTitleTextView = (TextView) v
-				.findViewById(R.id.fragment_reader_story_title);
-		mTitleTextView.setText(mStory.getTitle());
-
-		mDateTextView = (TextView) v
-				.findViewById(R.id.fragment_reader_story_date);
-		mDateTextView.setText(mStory.getAuthor());
+		mStoryImageTextView = (ImageView)v.findViewById(R.id.fragment_reader_story_image);
+		Picasso.with(mContext).load(mStory.getPictureUrl()).fit()
+		       .error(R.drawable
+				       .news_error)
+		       .into(mStoryImageTextView);
 
 		mContentWebView = (WebView) v
 				.findViewById(R.id.fragment_reader_story_content);
@@ -145,8 +146,13 @@ public class ReaderFragment extends Fragment {
 		mContentWebView.getSettings().setJavaScriptEnabled(true);
 		//mContentWebView.getSettings().setLoadWithOverviewMode(true);
 
+		String storyContent = String.format("<h1 style='color:#333333'>%s</h1><div style='color:#999999;" +
+				"font-style:italic;'><div style='float:left;'>%s</div><div style='float:right'>%s</div>" +
+				"</div><br><p style='color:#333333'>%s</p>", mStory.getTitle(), mStory.getAuthor(),
+				mStory.getDate(), mStory.getUnparsedContent());
+
 		//veryVeryVery important for playing the videos!
-		mContentWebView.loadDataWithBaseURL(mStory.getUrl(), mStory.getUnparsedContent(),
+		mContentWebView.loadDataWithBaseURL(mStory.getUrl(), storyContent,
 				"text/html", "UTF-8", null);
 
 		return v;
