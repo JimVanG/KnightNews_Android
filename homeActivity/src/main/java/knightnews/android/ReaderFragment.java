@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.ShareActionProvider;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,9 +20,13 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ReaderFragment extends Fragment {
 	private static final String TAG = "ReaderFragment";
@@ -145,6 +150,7 @@ public class ReaderFragment extends Fragment {
 		mContentWebView.getSettings().setPluginState(WebSettings.PluginState.ON_DEMAND);
 		mContentWebView.getSettings().setJavaScriptEnabled(true);
 		//mContentWebView.getSettings().setLoadWithOverviewMode(true);
+
 
 		String storyContent = String.format("<h1 style='color:#333333'>%s</h1><div style='color:#999999;" +
 				"font-style:italic;'><div style='float:left;'>%s</div><div style='float:right'>%s</div>" +

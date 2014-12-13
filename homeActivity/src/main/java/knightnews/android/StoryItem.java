@@ -3,11 +3,15 @@ package knightnews.android;
 import android.graphics.drawable.Drawable;
 import android.text.Html;
 import android.text.Html.ImageGetter;
+import android.text.format.DateFormat;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class StoryItem implements Serializable {
 
@@ -116,8 +120,14 @@ public class StoryItem implements Serializable {
     }
 
     public void setDate(String date) {
-        mDate = date;
-    }
+	    try {
+		    Date sdf = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+		    mDate = new SimpleDateFormat("MM/dd/yyyy").format(sdf);
+	    } catch (ParseException e) {
+		    mDate = date;
+		    e.printStackTrace();
+	    }
+	}
 
     public String getPictureUrl() {
         return mPictureUrl;
