@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/fragment_reader_story_image"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="275dp"
             android:gravity="center" />
 
         <WebView
