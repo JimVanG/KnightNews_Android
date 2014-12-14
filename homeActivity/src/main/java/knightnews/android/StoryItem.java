@@ -120,6 +120,7 @@ public class StoryItem implements Serializable {
     }
 
     public void setDate(String date) {
+	    //format the date string to something prettier looking
 	    try {
 		    Date sdf = new SimpleDateFormat("yyyy-MM-dd").parse(date);
 		    mDate = new SimpleDateFormat("MM/dd/yyyy").format(sdf);
