@@ -14,19 +14,19 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <!--Parse permissions -->
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <!--<uses-permission android:name="android.permission.WAKE_LOCK"/>-->
+    <!--<uses-permission android:name="android.permission.VIBRATE"/>-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>-->
+    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS"/>-->
+    <!--<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>-->
     <!--
   IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
   to match your app's package name + ".permission.C2D_MESSAGE".
     -->
-    <permission
-        android:protectionLevel="signature"
-        android:name="knightnews.android.permission.C2D_MESSAGE"/>
-    <uses-permission android:name="knightnews.android.permission.C2D_MESSAGE"/>
+    <!--<permission-->
+        <!--android:protectionLevel="signature"-->
+        <!--android:name="knightnews.android.permission.C2D_MESSAGE"/>-->
+    <!--<uses-permission android:name="knightnews.android.permission.C2D_MESSAGE"/>-->
 
 
     <uses-feature
@@ -46,6 +46,7 @@
         android:theme="@style/CustomActionBarTheme"
         android:hardwareAccelerated="true"
         android:name=".ApplicationClass">
+
         <activity
             android:name="knightnews.android.HomeActivity"
             android:label="@string/app_name">
@@ -130,40 +131,40 @@
             android:value="@integer/google_play_services_version"/>
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyCxrhHqc0WQNQ6Zx5hhJlTssWLn07uBJBw"/>
-        <!-- Release key: AIzaSyCxrhHqc0WQNQ6Zx5hhJlTssWLn07uBJBw
+            android:value="AIzaSyBPMM4_ShcTdlVM9Npk8xnQOp3lnPWGSqU"/>
+        <!-- Release key: AIzaSyBPMM4_ShcTdlVM9Npk8xnQOp3lnPWGSqU
             Debug Key: AIzaSyAKOWapT8ztymHqPUj7jx3CLtUg3SvLruU
       -->
 
-        <service android:name="com.parse.PushService"/>
+        <!--<service android:name="com.parse.PushService"/>-->
 
-        <receiver android:name="com.parse.ParseBroadcastReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.intent.action.USER_PRESENT"/>
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="com.parse.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+        <!--<receiver android:name="com.parse.ParseBroadcastReceiver">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED"/>-->
+                <!--<action android:name="android.intent.action.USER_PRESENT"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver-->
+            <!--android:name="com.parse.GcmBroadcastReceiver"-->
+            <!--android:permission="com.google.android.c2dm.permission.SEND">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.google.android.c2dm.intent.RECEIVE"/>-->
+                <!--<action android:name="com.google.android.c2dm.intent.REGISTRATION"/>-->
 
-                <!--
-                  IMPORTANT: Change "com.parse.starter" to match your app's package name.
-                -->
-                <category android:name="knightnews.android"/>
-            </intent-filter>
-        </receiver>
+                <!--&lt;!&ndash;-->
+                  <!--IMPORTANT: Change "com.parse.starter" to match your app's package name.-->
+                <!--&ndash;&gt;-->
+                <!--<category android:name="knightnews.android"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
-        <receiver
-            android:name="knightnews.android.PushNewsReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="knightnews.android.UPDATE_STATUS"/>
-            </intent-filter>
-        </receiver>
+        <!--<receiver-->
+            <!--android:name="knightnews.android.PushNewsReceiver"-->
+            <!--android:exported="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="knightnews.android.UPDATE_STATUS"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
     </application>
 
